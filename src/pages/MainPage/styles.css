@@ -2,8 +2,10 @@ div {
   margin: 0;
   padding: 0;
 }
+
 .preloader {
   position: absolute;
+  overflow: hidden;
   height: 100vh;
   width: 100%;
   left: 0;
@@ -18,23 +20,25 @@ div {
   overflow: hidden;
 }
 .white_preload1 {
-  z-index: 5;
+  z-index: 15;
   height: 100%;
   width: 50%;
-  background-color: rgb(255, 255, 255);
+  background-color: #f5f3f0;
   transition: all 1.5s ease;
 }
 .white_preload2 {
-  z-index: 5;
+  z-index: 15;
   height: 100%;
   width: 50%;
-  background-color: rgb(255, 255, 255);
+  background-color: #f5f3f0;
   transition: all 1.5s ease;
 }
 .preload_content {
   position: relative;
-  z-index: 1;
+  z-index: 13;
   background-image: url("/public/images/content.png");
+  background-size: cover;
+  background-position: center;
   height: 100vh;
   background-position: center center;
   display: flex;
@@ -48,14 +52,14 @@ div {
   width: 300px;
   text-align: center;
   color: white;
-  z-index: 3;
+  z-index: 14;
   opacity: 0;
   transform: translateY(-20%);
   transition: all 0.5s ease;
 }
 .black_preload {
   position: absolute;
-  z-index: 2;
+  z-index: 12;
   width: 100vw;
   height: 100vh;
   background-color: black;
@@ -85,6 +89,10 @@ div {
   opacity: 1;
 }
 .stage-4 {
+  z-index: 12;
   transform: translateY(-100%);
   transition: all 1s ease;
+}
+.stage-5 {
+  display: none;
 }

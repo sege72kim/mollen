@@ -1,0 +1,209 @@
+@font-face {
+  font-family: "Orchidea Pro ExBd";
+  src: url("/public/fonts/OrchideaPro-ExtraBold.eot");
+  src: local("Orchidea Pro ExtraBold"), local("OrchideaPro-ExtraBold"),
+    url("/public/fonts/OrchideaPro-ExtraBold.eot?#iefix")
+      format("embedded-opentype"),
+    url("/public/fonts/OrchideaPro-ExtraBold.woff2") format("woff2"),
+    url("/public/fonts/OrchideaPro-ExtraBold.woff") format("woff"),
+    url("/public/fonts/OrchideaPro-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Orchidea Pro";
+  src: url("/public/fonts/OrchideaPro-Bold.eot");
+  src: local("Orchidea Pro Bold"), local("OrchideaPro-Bold"),
+    url("/public/fonts/OrchideaPro-Bold.eot?#iefix") format("embedded-opentype"),
+    url("/public/fonts/OrchideaPro-Bold.woff2") format("woff2"),
+    url("/public/fonts/OrchideaPro-Bold.woff") format("woff"),
+    url("/public/fonts/OrchideaPro-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Orchidea Pro Lt";
+  src: url("/public/fonts/OrchideaPro-LightItalic.eot");
+  src: local("Orchidea Pro Light Italic"), local("OrchideaPro-LightItalic"),
+    url("/public/fonts/OrchideaPro-LightItalic.eot?#iefix")
+      format("embedded-opentype"),
+    url("/public/fonts/OrchideaPro-LightItalic.woff2") format("woff2"),
+    url("/public/fonts/OrchideaPro-LightItalic.woff") format("woff"),
+    url("/public/fonts/OrchideaPro-LightItalic.ttf") format("truetype");
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Orchidea Pro SmBd";
+  src: url("/public/fonts/OrchideaPro-SemiBold.eot");
+  src: local("Orchidea Pro SemiBold"), local("OrchideaPro-SemiBold"),
+    url("/public/fonts/OrchideaPro-SemiBold.eot?#iefix")
+      format("embedded-opentype"),
+    url("/public/fonts/OrchideaPro-SemiBold.woff2") format("woff2"),
+    url("/public/fonts/OrchideaPro-SemiBold.woff") format("woff"),
+    url("/public/fonts/OrchideaPro-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Orchidea Pro Bk";
+  src: url("/public/fonts/OrchideaPro-BlackItalic.eot");
+  src: local("Orchidea Pro Black Italic"), local("OrchideaPro-BlackItalic"),
+    url("/public/fonts/OrchideaPro-BlackItalic.eot?#iefix")
+      format("embedded-opentype"),
+    url("/public/fonts/OrchideaPro-BlackItalic.woff2") format("woff2"),
+    url("/public/fonts/OrchideaPro-BlackItalic.woff") format("woff"),
+    url("/public/fonts/OrchideaPro-BlackItalic.ttf") format("truetype");
+  font-weight: 900;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Orchidea Pro Bk";
+  src: url("/public/fonts/OrchideaPro-Black.eot");
+  src: local("Orchidea Pro Black"), local("OrchideaPro-Black"),
+    url("/public/fonts/OrchideaPro-Black.eot?#iefix")
+      format("embedded-opentype"),
+    url("/public/fonts/OrchideaPro-Black.woff2") format("woff2"),
+    url("/public/fonts/OrchideaPro-Black.woff") format("woff"),
+    url("/public/fonts/OrchideaPro-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Orchidea Pro";
+  src: url("/public/fonts/OrchideaPro-Regular.eot");
+  src: local("Orchidea Pro Regular"), local("OrchideaPro-Regular"),
+    url("/public/fonts/OrchideaPro-Regular.eot?#iefix")
+      format("embedded-opentype"),
+    url("/public/fonts/OrchideaPro-Regular.woff2") format("woff2"),
+    url("/public/fonts/OrchideaPro-Regular.woff") format("woff"),
+    url("/public/fonts/OrchideaPro-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Orchidea Pro SmBd";
+  src: url("/public/fonts/OrchideaPro-SemiBoldItalic.eot");
+  src: local("Orchidea Pro SemiBold Italic"),
+    local("OrchideaPro-SemiBoldItalic"),
+    url("/public/fonts/OrchideaPro-SemiBoldItalic.eot?#iefix")
+      format("embedded-opentype"),
+    url("/public/fonts/OrchideaPro-SemiBoldItalic.woff2") format("woff2"),
+    url("/public/fonts/OrchideaPro-SemiBoldItalic.woff") format("woff"),
+    url("/public/fonts/OrchideaPro-SemiBoldItalic.ttf") format("truetype");
+  font-weight: 600;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Orchidea Pro";
+  src: url("/public/fonts/OrchideaPro-BoldItalic.eot");
+  src: local("Orchidea Pro Bold Italic"), local("OrchideaPro-BoldItalic"),
+    url("/public/fonts/OrchideaPro-BoldItalic.eot?#iefix")
+      format("embedded-opentype"),
+    url("/public/fonts/OrchideaPro-BoldItalic.woff2") format("woff2"),
+    url("/public/fonts/OrchideaPro-BoldItalic.woff") format("woff"),
+    url("/public/fonts/OrchideaPro-BoldItalic.ttf") format("truetype");
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Orchidea Pro Md";
+  src: url("/public/fonts/OrchideaPro-MediumItalic.eot");
+  src: local("Orchidea Pro Medium Italic"), local("OrchideaPro-MediumItalic"),
+    url("/public/fonts/OrchideaPro-MediumItalic.eot?#iefix")
+      format("embedded-opentype"),
+    url("/public/fonts/OrchideaPro-MediumItalic.woff2") format("woff2"),
+    url("/public/fonts/OrchideaPro-MediumItalic.woff") format("woff"),
+    url("/public/fonts/OrchideaPro-MediumItalic.ttf") format("truetype");
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Orchidea Pro ExLt";
+  src: url("/public/fonts/OrchideaPro-ExtraLightItalic.eot");
+  src: local("Orchidea Pro ExtraLight Italic"),
+    local("OrchideaPro-ExtraLightItalic"),
+    url("/public/fonts/OrchideaPro-ExtraLightItalic.eot?#iefix")
+      format("embedded-opentype"),
+    url("/public/fonts/OrchideaPro-ExtraLightItalic.woff2") format("woff2"),
+    url("/public/fonts/OrchideaPro-ExtraLightItalic.woff") format("woff"),
+    url("/public/fonts/OrchideaPro-ExtraLightItalic.ttf") format("truetype");
+  font-weight: 200;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Orchidea Pro Md";
+  src: url("/public/fonts/OrchideaPro-Medium.eot");
+  src: local("Orchidea Pro Medium"), local("OrchideaPro-Medium"),
+    url("/public/fonts/OrchideaPro-Medium.eot?#iefix")
+      format("embedded-opentype"),
+    url("/public/fonts/OrchideaPro-Medium.woff2") format("woff2"),
+    url("/public/fonts/OrchideaPro-Medium.woff") format("woff"),
+    url("/public/fonts/OrchideaPro-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Orchidea Pro ExLt";
+  src: url("/public/fonts/OrchideaPro-ExtraLight.eot");
+  src: local("Orchidea Pro ExtraLight"), local("OrchideaPro-ExtraLight"),
+    url("/public/fonts/OrchideaPro-ExtraLight.eot?#iefix")
+      format("embedded-opentype"),
+    url("/public/fonts/OrchideaPro-ExtraLight.woff2") format("woff2"),
+    url("/public/fonts/OrchideaPro-ExtraLight.woff") format("woff"),
+    url("/public/fonts/OrchideaPro-ExtraLight.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Orchidea Pro";
+  src: url("/public/fonts/OrchideaPro-Italic.eot");
+  src: local("Orchidea Pro Italic"), local("OrchideaPro-Italic"),
+    url("/public/fonts/OrchideaPro-Italic.eot?#iefix")
+      format("embedded-opentype"),
+    url("/public/fonts/OrchideaPro-Italic.woff2") format("woff2"),
+    url("/public/fonts/OrchideaPro-Italic.woff") format("woff"),
+    url("/public/fonts/OrchideaPro-Italic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Orchidea Pro ExBd";
+  src: url("/public/fonts/OrchideaPro-ExtraBoldItalic.eot");
+  src: local("Orchidea Pro ExtraBold Italic"),
+    local("OrchideaPro-ExtraBoldItalic"),
+    url("/public/fonts/OrchideaPro-ExtraBoldItalic.eot?#iefix")
+      format("embedded-opentype"),
+    url("/public/fonts/OrchideaPro-ExtraBoldItalic.woff2") format("woff2"),
+    url("/public/fonts/OrchideaPro-ExtraBoldItalic.woff") format("woff"),
+    url("/public/fonts/OrchideaPro-ExtraBoldItalic.ttf") format("truetype");
+  font-weight: 800;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Orchidea Pro Lt";
+  src: url("/public/fonts/OrchideaPro-Light.eot");
+  src: local("Orchidea Pro Light"), local("OrchideaPro-Light"),
+    url("/public/fonts/OrchideaPro-Light.eot?#iefix")
+      format("embedded-opentype"),
+    url("/public/fonts/OrchideaPro-Light.woff2") format("woff2"),
+    url("/public/fonts/OrchideaPro-Light.woff") format("woff"),
+    url("/public/fonts/OrchideaPro-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}

@@ -1,0 +1,103 @@
+header {
+  position: relative;
+  height: 1031px;
+  width: 100%;
+  z-index: 1;
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("/public/images/main.png");
+  opacity: 0.6;
+  background-size: cover;
+  background-position: center;
+  z-index: 2;
+}
+.header_back {
+  position: absolute;
+  background-color: #343a45;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+nav {
+  height: 72px;
+  position: relative;
+  z-index: 3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+.logo {
+  margin-left: 40px;
+  display: flex;
+  align-items: center;
+  column-gap: 40px;
+}
+.menu_button {
+  display: flex;
+  column-gap: 7px;
+}
+.menu_button div {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.header-black nav {
+  color: #72716e;
+}
+
+.header-white nav {
+  color: white;
+}
+
+.header-black .menu_button div {
+  background-color: black;
+}
+
+.header-white .menu_button div {
+  background-color: white;
+}
+
+.header-black .logo_picture {
+  filter: brightness(0) invert(0);
+}
+
+.header-white .logo_picture {
+  filter: brightness(0) invert(1);
+}
+ul {
+  display: flex;
+  align-items: center;
+  column-gap: 36px;
+  margin-right: 40px;
+}
+li {
+  display: flex;
+  align-items: center;
+  column-gap: 12px;
+  margin-top: 6px;
+}
+.text_button {
+  margin-top: 6px;
+}
+.buy_storage {
+  margin-left: 86px;
+  margin-top: 0px;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #4e76c6;
+  border-radius: 50%;
+}

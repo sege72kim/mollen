@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./styles.css";
+import Header from "../../components/header/Header";
 const MainPage = () => {
   const [stage, setStage] = useState(0);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -17,7 +18,7 @@ const MainPage = () => {
   }, []);
 
   useEffect(() => {
-    if (isLoaded && stage < 4) {
+    if (isLoaded && stage < 5) {
       let delay = 2000;
 
       if (stage === 2) {
@@ -45,7 +46,7 @@ const MainPage = () => {
           <p>Бренд Домашнего Текстиля</p>
         </div>
       </div>
-      <h1>321321</h1>
+      <Header color="white" />
     </div>
   );
 };
