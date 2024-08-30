@@ -48,29 +48,30 @@ const MainPage = () => {
           <p>Бренд Домашнего Текстиля</p>
         </div>
       </div>
+
       <header className="main_header">
         <div className="main_header_back" />
         <Header color="white" />
         <div className="main_header_content">
-          <div className="main_header_button 1">
+          <div className="main_header_button a">
             <div className="main_header_dot">
               <div />
             </div>
             <div className="main_header_dot_text">Принты</div>
           </div>
-          <div className="main_header_button 2">
+          <div className="main_header_button b">
             <div className="main_header_dot">
               <div />
             </div>
             <div className="main_header_dot_text">Постельное белье</div>
           </div>
-          <div className="main_header_button 3">
+          <div className="main_header_button c">
             <div className="main_header_dot">
               <div />
             </div>
             <div className="main_header_dot_text">Комлекты</div>
           </div>
-          <div className="main_header_button 4">
+          <div className="main_header_button d">
             <div className="main_header_dot">
               <div />
             </div>
