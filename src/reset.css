@@ -10,7 +10,9 @@ body {
 main {
   display: block;
 }
-
+p {
+  margin: 0;
+}
 h1 {
   font-size: 2em;
   margin: 0.67em 0;
@@ -87,7 +89,11 @@ button,
 input {
   overflow: visible;
 }
-
+button {
+  all: unset;
+  display: inline-block;
+  cursor: pointer;
+}
 button,
 select {
   text-transform: none;
