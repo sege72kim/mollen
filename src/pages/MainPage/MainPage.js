@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./styles.css";
-import Header from "../../components/header/Header";
+import Navigation from "../../components/navigation/Navigation";
 const MainPage = () => {
   const [stage, setStage] = useState(0);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -57,7 +57,7 @@ const MainPage = () => {
 
       <header className="main_header">
         <div className="main_header_back" />
-        <Header color="white" />
+        <Navigation color="white" />
         <div className="main_header_content">
           <div className="main_header_button dota">
             <div className="main_header_dot">
@@ -93,13 +93,13 @@ const MainPage = () => {
             <img src="./images/main.png" alt="" />
             <p>
               Роскошный сон: Подберите идеальное постельное белье для вашего
-              дома{" "}
+              дома
             </p>
           </div>
           <div className="main_section_1_group msg2">
             <img src="./images/main_2.png" alt="" />
             <p>
-              Нежные ткани, идеальные сны: Ваш выбор постельного белья здесь{" "}
+              Нежные ткани, идеальные сны: Ваш выбор постельного белья здесь
             </p>
           </div>
           <div className="main_section_1_group msg3">
@@ -117,7 +117,7 @@ const MainPage = () => {
 
       <section className="main_section_2">
         <div className="main_section_2_div_1">
-          <p>Собери свой комплект на конструкторе</p>
+          <h1>Собери свой комплект на конструкторе</h1>
           <button>Собрать</button>
         </div>
         <div className="main_section_2_div_2"></div>

@@ -255,9 +255,10 @@ div {
   background-size: cover;
   background-position: center;
 }
-.main_section_2_div_1 p {
+.main_section_2_div_1 h1 {
   position: absolute;
   color: white;
+  font-weight: 500;
   font-size: 40px;
   width: 477px;
   left: 40px;

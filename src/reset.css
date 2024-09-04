@@ -1,21 +1,66 @@
-html {
-  line-height: 1.15;
-  -webkit-text-size-adjust: 100%;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-body {
+ul,
+ol {
+  list-style: none;
+  padding: 0;
   margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  background-color: transparent;
+}
+
+img,
+button,
+input,
+textarea {
+  border: none;
+  outline: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
 }
 
 main {
   display: block;
 }
+
 p {
   margin: 0;
 }
+
 h1 {
   font-size: 2em;
-  margin: 0.67em 0;
+  margin: 0;
 }
 
 hr {
@@ -27,10 +72,6 @@ hr {
 pre {
   font-family: monospace, monospace;
   font-size: 1em;
-}
-
-a {
-  background-color: transparent;
 }
 
 abbr[title] {
@@ -54,6 +95,7 @@ samp {
 small {
   font-size: 80%;
 }
+
 sub,
 sup {
   font-size: 75%;
@@ -89,11 +131,13 @@ button,
 input {
   overflow: visible;
 }
+
 button {
   all: unset;
   display: inline-block;
   cursor: pointer;
 }
+
 button,
 select {
   text-transform: none;
@@ -151,18 +195,6 @@ textarea {
 [type="number"]::-webkit-inner-spin-button,
 [type="number"]::-webkit-outer-spin-button {
   height: auto;
-}
-
-ul,
-ol {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-li {
-  margin: 0;
-  padding: 0;
 }
 
 nav {
