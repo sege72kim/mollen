@@ -20,7 +20,11 @@ nav {
   column-gap: 7px;
   cursor: pointer;
 }
+.menu_button:hover div {
+  transform: scale(1.5);
+}
 .menu_button div {
+  transition: all 0.2s ease-in;
   width: 6px;
   height: 6px;
   border-radius: 50%;
@@ -51,22 +55,32 @@ nav {
   filter: brightness(0) invert(1);
   cursor: pointer;
 }
-ul {
+nav ul {
   display: flex;
   align-items: center;
   column-gap: 36px;
   margin-right: 40px;
 }
-li {
+nav li {
   display: flex;
   align-items: center;
   column-gap: 12px;
   margin-top: 6px;
   cursor: pointer;
+  transition: all 0.2s ease-in;
+}
+nav li:hover {
+  color: #dadada;
+  transform: scale(1.05);
 }
 .text_button {
   cursor: pointer;
   margin-top: 6px;
+  transition: all 0.2s ease-in;
+}
+.text_button:hover {
+  color: #dadada;
+  transform: scale(1.05);
 }
 .buy_storage {
   margin-left: 86px;

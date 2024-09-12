@@ -4,7 +4,7 @@ div {
 }
 
 .preloader {
-  position: absolute;
+  position: fixed;
   overflow: hidden;
   height: 100vh;
   width: 100%;
@@ -328,7 +328,6 @@ div {
 }
 .main_section_3 > div:nth-child(1) > div:nth-child(2) {
   display: flex;
-  column-gap: 180px;
   font-weight: 400;
   font-size: 14px;
   line-height: 22px;
@@ -336,6 +335,7 @@ div {
   text-transform: uppercase;
   margin-top: 110px;
   margin-left: 40px;
+  column-gap: 200px;
 }
 .main_section_3 > div:nth-child(1) > div:nth-child(2) li div {
   width: 8px;
@@ -348,8 +348,13 @@ div {
   display: flex;
   flex-direction: column;
   row-gap: 35px;
+  align-items: start;
+}
+.main_section_3 > div:nth-child(1) > div:nth-child(2) li {
+  display: flex;
   align-items: center;
-  justify-content: center;
+  column-gap: 12px;
+  cursor: pointer;
 }
 .main_section_3 > div:nth-child(1) > div:nth-child(3) {
   display: flex;

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./styles.css";
 import Navigation from "../../components/navigation/Navigation";
 import Card from "../../components/card/card";
+import Footer from "../../components/footer/Footer";
 const MainPage = () => {
   const [stage, setStage] = useState(0);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -14,6 +15,7 @@ const MainPage = () => {
 
     const handleLoad = () => {
       setIsLoaded(true);
+      console.log(isLoaded);
     };
 
     window.addEventListener("load", handleLoad);
@@ -25,15 +27,15 @@ const MainPage = () => {
   }, []);
 
   useEffect(() => {
-    if (isLoaded && stage < 5) {
+    if (stage < 5) {
       let delay = 2000;
 
-      if (stage === 2) {
-        delay = 1000;
+      if (stage === 0) {
+        delay = 500;
       } else if (stage === 3) {
         delay = 3000;
-      } else if (stage === 0) {
-        delay = 500;
+      } else if (stage === 2) {
+        delay = 1000;
       }
 
       const timer = setTimeout(() => {
@@ -87,123 +89,126 @@ const MainPage = () => {
           <img className="main_header_logo" src="./icons/logo.svg" />
         </div>
       </header>
+      <main>
+        <section className="main_section_1">
+          <div>
+            <div>
+              <img src="./images/main.png" alt="" />
+              <p>
+                Роскошный сон: Подберите идеальное постельное белье для вашего
+                дома
+              </p>
+            </div>
+            <div>
+              <img src="./images/main_2.png" alt="" />
+              <p>
+                Нежные ткани, идеальные сны: Ваш выбор постельного белья здесь
+              </p>
+            </div>
+            <div>
+              <img src="./images/main_3.png" alt="" />
+              <p>
+                Создайте уют с лучшим постельным бельем: качество, комфорт,
+                стиль
+              </p>
+            </div>
+            <div>
+              <img src="./images/main.png" alt="" />
+              <p>Белье, которое дарит сон: коллекция для сладких сновидений</p>
+            </div>
+          </div>
+        </section>
 
-      <section className="main_section_1">
-        <div>
+        <section className="main_section_2">
           <div>
-            <img src="./images/main.png" alt="" />
-            <p>
-              Роскошный сон: Подберите идеальное постельное белье для вашего
-              дома
-            </p>
+            <h1>Собери свой комплект на конструкторе</h1>
+            <button>Собрать</button>
           </div>
           <div>
-            <img src="./images/main_2.png" alt="" />
-            <p>
-              Нежные ткани, идеальные сны: Ваш выбор постельного белья здесь
-            </p>
+            <Card
+              category="Комплект"
+              name="Комлект Красный Бархат"
+              collection="Бархатное путешествие"
+              price="15000"
+              className="main_section_2_card"
+            />
+            <Card
+              category="Комплект"
+              name="Комлект Желтая Пустыня"
+              collection="Пески времени"
+              price="19000"
+              className="main_section_2_card"
+            />
+            <Card
+              category="Комплект"
+              name="Комлект Время Спокойствия"
+              collection="Дивные времена"
+              price="21000"
+              className="main_section_2_card"
+            />
+            <Card
+              category="Комплект"
+              name="Комлект Синяя Жемчужина"
+              collection="Глубина"
+              price="17000"
+              className="main_section_2_card"
+            />
+          </div>
+        </section>
+        <section className="main_section_3">
+          <div>
+            <h1>Каталог Mollen</h1>
+            <div>
+              <ul>
+                <li>
+                  <div />
+                  <p>Постельное</p>
+                </li>
+                <li>
+                  <div />
+                  <p>Аксессуары</p>
+                </li>
+              </ul>
+              <ul>
+                <li>
+                  <div />
+                  <p>Одежда</p>
+                </li>
+                <li>
+                  <div />
+                  <p>Принты</p>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <p>
+                “При выборе варианта оплаты наличными, вы дожидаетесь приезда
+                курьера и передаёте ему сумму за товар в рублях. Курьер
+                предоставляет товар, который можно осмотреть на предмет
+                повреждений, соответствие указанным условиям.
+              </p>
+              <p>
+                “При выборе варианта оплаты наличными, вы дожидаетесь приезда
+                курьера и передаёте ему сумму за товар в рублях. Курьер
+                предоставляет товар, который можно осмотреть на предмет
+                повреждений, соответствие указанным условиям.
+              </p>
+            </div>
           </div>
           <div>
-            <img src="./images/main_3.png" alt="" />
-            <p>
-              Создайте уют с лучшим постельным бельем: качество, комфорт, стиль
-            </p>
+            <img src="./icons/logo.svg" />
           </div>
-          <div>
-            <img src="./images/main.png" alt="" />
-            <p>Белье, которое дарит сон: коллекция для сладких сновидений</p>
-          </div>
-        </div>
-      </section>
+        </section>
+        <section className="main_section_4">
+          <img src="./images/main.png" alt="" />
 
-      <section className="main_section_2">
-        <div>
-          <h1>Собери свой комплект на конструкторе</h1>
-          <button>Собрать</button>
-        </div>
-        <div>
-          <Card
-            category="Комплект"
-            name="Комлект Красный Бархат"
-            collection="Бархатное путешествие"
-            price="15000"
-            className="main_section_2_card"
-          />
-          <Card
-            category="Комплект"
-            name="Комлект Желтая Пустыня"
-            collection="Пески времени"
-            price="19000"
-            className="main_section_2_card"
-          />
-          <Card
-            category="Комплект"
-            name="Комлект Время Спокойствия"
-            collection="Дивные времена"
-            price="21000"
-            className="main_section_2_card"
-          />
-          <Card
-            category="Комплект"
-            name="Комлект Синяя Жемчужина"
-            collection="Глубина"
-            price="17000"
-            className="main_section_2_card"
-          />
-        </div>
-      </section>
-      <section className="main_section_3">
-        <div>
-          <h1>Каталог Mollen</h1>
-          <div>
-            <ul>
-              <li>
-                <div />
-                <p>Постельное</p>
-              </li>
-              <li>
-                <div />
-                <p>Аксессуары</p>
-              </li>
-            </ul>
-            <ul>
-              <li>
-                <div />
-                <p>Одежда</p>
-              </li>
-              <li>
-                <div />
-                <p>Принты</p>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <p>
-              “При выборе варианта оплаты наличными, вы дожидаетесь приезда
-              курьера и передаёте ему сумму за товар в рублях. Курьер
-              предоставляет товар, который можно осмотреть на предмет
-              повреждений, соответствие указанным условиям.
-            </p>
-            <p>
-              “При выборе варианта оплаты наличными, вы дожидаетесь приезда
-              курьера и передаёте ему сумму за товар в рублях. Курьер
-              предоставляет товар, который можно осмотреть на предмет
-              повреждений, соответствие указанным условиям.
-            </p>
-          </div>
-        </div>
-        <div>
-          <img src="./icons/logo.svg" />
-        </div>
-      </section>
-      <section className="main_section_4">
-        <img src="./images/main.png" alt="" />
+          <img src="./images/main_3.png" alt="" />
 
-        <img src="./images/main_3.png" alt="" />
-
-        <img src="./images/main.png" alt="" />
-        <img src="./images/main_3.png" alt="" />
-      </section>
+          <img src="./images/main.png" alt="" />
+          <img src="./images/main_3.png" alt="" />
+        </section>
+      </main>
+      <Footer />
     </div>
   );
 };

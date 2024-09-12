@@ -10,7 +10,16 @@
   font-weight: 800;
   font-style: normal;
 }
-
+@font-face {
+  font-family: "Circe";
+  src: url("/public/fonts/Circe-Regular.eot");
+  src: local("Circe"), local("Circe"),
+    url("/public/fonts/Circe-Regular.eot?#iefix") format("embedded-opentype"),
+    url("/public/fonts/Circe-Regular.woff") format("woff"),
+    url("/public/fonts/Circe-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
 @font-face {
   font-family: "Orchidea Pro";
   src: url("/public/fonts/OrchideaPro-Bold.eot");
