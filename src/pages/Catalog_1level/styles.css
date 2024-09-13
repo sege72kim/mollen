@@ -1,2 +1,7 @@
 .header_catalog_1 {
+  height: 530px;
+  margin: 0 40px;
+  background-image: url("/public/images/image_47.png");
+  background-size: cover;
+  background-position: bottom;
 }
