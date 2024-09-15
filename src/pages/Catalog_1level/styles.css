@@ -6,6 +6,7 @@
   background-size: cover;
   background-position: center;
   color: white;
+  transition: all 1s ease;
 }
 .header_catalog_1 > h1 {
   position: relative;
@@ -46,4 +47,13 @@
   transform: scale(0.97);
   background-color: #426bbd;
   color: white;
+}
+.closed {
+  transform: translateY(-530px);
+}
+.catalog_1 main {
+  transition: all 1s ease;
+}
+.main-closed {
+  transform: translateY(-530px);
 }

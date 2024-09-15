@@ -32,10 +32,12 @@ nav {
 
 .navigation-black {
   color: #72716e;
+  background-color: white;
 }
 
 .navigation-white {
   color: white;
+  background-color: transparent;
 }
 
 .navigation-black .menu_button div {
