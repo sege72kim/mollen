@@ -1,7 +1,7 @@
 import React from "react";
 import "./styles.css";
 import Navigation from "../../components/navigation/Navigation";
-import Card from "../../components/card/card";
+import Card from "../../components/card/Card";
 import Footer from "../../components/footer/Footer";
 import Preloader from "../../components/preloader/Preloader";
 const MainPage = () => {
@@ -35,6 +35,12 @@ const MainPage = () => {
               <div />
             </div>
             <div className="main_header_dot_text">Одежда</div>
+          </div>
+          <div>
+            <div className="main_header_dot">
+              <div />
+            </div>
+            <div className="main_header_dot_text">Аксессуары</div>
           </div>
           <img className="main_header_logo" src="./icons/logo.svg" />
         </div>

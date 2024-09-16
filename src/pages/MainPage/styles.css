@@ -103,6 +103,10 @@ div {
   top: 40%;
   left: 65%;
 }
+.main_header_content > div:nth-child(5) {
+  top: 9%;
+  left: 22%;
+}
 .main_section_1 {
   height: 840px;
 }
@@ -152,7 +156,6 @@ div {
 }
 .main_section_2 > div {
   width: 50%;
-  height: 100%;
 }
 .main_section_2 > div:first-child {
   position: relative;
@@ -204,7 +207,6 @@ div {
   justify-content: center;
   background-color: #f5f3f0;
 }
-.main_section_3 > div,
 .main_section_3 > div {
   width: 50%;
   height: 740px;

@@ -2,21 +2,57 @@ import React, { useState, useEffect } from "react";
 import "./styles.css";
 import Preloader from "../../components/preloader/Preloader";
 import Navigation from "../../components/navigation/Navigation";
-import { useSelector, useDispatch } from "react-redux";
-import { addToCart } from "../../redux/cartSlice";
-import { removeFromCart } from "../../redux/cartSlice";
-import Card from "../../components/card/card";
+import Checkbox from "../../components/checkbox/Checkbox";
+import Footer from "../../components/footer/Footer";
 
 const Catalog_1 = () => {
-  const products = useSelector((state) => state.products);
-  const dispatch = useDispatch();
-  const cartItems = useSelector((state) => state.cart);
-
-  const total = cartItems.reduce(
-    (sum, item) => sum + item.price * item.quantity,
-    0
-  );
   const [level, setLevel] = useState("");
+  const [checkedItems, setCheckedItems] = useState({
+    sets: false,
+    bedding: false,
+    clothes: false,
+    accessories: false,
+  });
+  const [checkedCollection, setCheckedCollection] = useState({
+    collection1: false,
+    collection2: false,
+    collection3: false,
+    collection4: false,
+    collection5: false,
+    collection6: false,
+  });
+
+  const handleCheckboxChange = (name, isChecked) => {
+    if (name in checkedItems) {
+      setCheckedItems((prevState) => ({
+        ...prevState,
+        [name]: isChecked,
+      }));
+    } else {
+      setCheckedCollection((prevState) => ({
+        ...prevState,
+        [name]: isChecked,
+      }));
+    }
+  };
+
+  const isAnyChecked = () => {
+    const anyItemChecked = Object.values(checkedItems).some(
+      (value) => value === true
+    );
+    const anyCollectionChecked = Object.values(checkedCollection).some(
+      (value) => value === true
+    );
+    return anyItemChecked || anyCollectionChecked;
+  };
+
+  useEffect(() => {
+    if (isAnyChecked()) {
+      setLevel("closed-catalog");
+    } else {
+      setLevel("");
+    }
+  }, [checkedItems, checkedCollection]);
 
   return (
     <div className="catalog_1">
@@ -34,73 +70,76 @@ const Catalog_1 = () => {
           </div>
         </div>
       </header>
-      <main className={`main-${level}`}>
-        <aside>
+      <main className={`main-catalog-${level}`}>
+        <aside className="filter">
           <div className="aside_filter">
-            <h1>Категория</h1>
-            <div className="aside_checkbox">
-              <input type="checkbox" />
-              <a>Комплекты</a>
-            </div>
-            <div className="aside_checkbox">
-              <input type="checkbox" />
-              <a>Постельное белье</a>
-            </div>
-            <div className="aside_checkbox">
-              <input type="checkbox" />
-              <a>Одежда</a>
-            </div>
-            <div className="aside_checkbox">
-              <input type="checkbox" />
-              <a>Аксессуары</a>
-            </div>
+            <h1>Категории</h1>
+            <Checkbox
+              label="Комплекты"
+              onChange={(isChecked) => handleCheckboxChange("sets", isChecked)}
+            />
+            <Checkbox
+              label="Постельное белье"
+              onChange={(isChecked) =>
+                handleCheckboxChange("bedding", isChecked)
+              }
+            />
+            <Checkbox
+              label="Одежда"
+              onChange={(isChecked) =>
+                handleCheckboxChange("clothes", isChecked)
+              }
+            />
+            <Checkbox
+              label="Аксессуары"
+              onChange={(isChecked) =>
+                handleCheckboxChange("accessories", isChecked)
+              }
+            />
           </div>
           <div className="aside_filter">
             <h1>Коллекция</h1>
-            <div className="aside_checkbox">
-              <input type="checkbox" />
-              <a>Глубина</a>
-            </div>
-            <div className="aside_checkbox">
-              <input type="checkbox" />
-              <a>Бархатное путешествие</a>
-            </div>
-            <div className="aside_checkbox">
-              <input type="checkbox" />
-              <a>Дивные времена</a>
-            </div>
-            <div className="aside_checkbox">
-              <input type="checkbox" />
-              <a>Летние грёзы</a>
-            </div>
-            <div className="aside_checkbox">
-              <input type="checkbox" />
-              <a>Зимняя сказка</a>
-            </div>
-
-            <div className="aside_checkbox">
-              <input type="checkbox" />
-              <a>Осенний вальс</a>
-            </div>
+            <Checkbox
+              label="Глубина"
+              onChange={(isChecked) =>
+                handleCheckboxChange("collection1", isChecked)
+              }
+            />
+            <Checkbox
+              label="Бархатное путешествие"
+              onChange={(isChecked) =>
+                handleCheckboxChange("collection2", isChecked)
+              }
+            />
+            <Checkbox
+              label="Дивные времена"
+              onChange={(isChecked) =>
+                handleCheckboxChange("collection3", isChecked)
+              }
+            />
+            <Checkbox
+              label="Летние грёзы"
+              onChange={(isChecked) =>
+                handleCheckboxChange("collection4", isChecked)
+              }
+            />
+            <Checkbox
+              label="Зимняя сказка"
+              onChange={(isChecked) =>
+                handleCheckboxChange("collection5", isChecked)
+              }
+            />
+            <Checkbox
+              label="Осенний вальс"
+              onChange={(isChecked) =>
+                handleCheckboxChange("collection6", isChecked)
+              }
+            />
           </div>
         </aside>
-        <section>
-          <button
-            onClick={() => {
-              setLevel("closed");
-            }}
-          >
-            Убрать
-          </button>
-          <button
-            onClick={() => {
-              setLevel("");
-            }}
-          >
-            показать
-          </button>
-        </section>
+        <section></section>
       </main>
+      <Footer />
     </div>
   );
 };
