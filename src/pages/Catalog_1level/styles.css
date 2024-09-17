@@ -55,6 +55,8 @@
   transition: all 1s ease;
   height: 100%;
   border-top: 1px solid #eceae7;
+  display: flex;
+  padding-top: 40px;
 }
 .main-catalog-closed-catalog {
   transform: translateY(-530px);
@@ -63,7 +65,6 @@
   width: 360px;
   overflow: hidden;
   margin-left: 40px;
-  margin-top: 40px;
   display: flex;
   flex-direction: column;
   row-gap: 36px;

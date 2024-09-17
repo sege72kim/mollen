@@ -137,7 +137,10 @@ const Catalog_1 = () => {
             />
           </div>
         </aside>
-        <section></section>
+        <section>
+          <a>Главная/Каталог</a>
+          <h1></h1>
+        </section>
       </main>
       <Footer />
     </div>
