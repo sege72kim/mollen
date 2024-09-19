@@ -8,10 +8,10 @@ import Footer from "../../components/footer/Footer";
 const Catalog_1 = () => {
   const [level, setLevel] = useState("");
   const [checkedItems, setCheckedItems] = useState({
-    sets: false,
     bedding: false,
     clothes: false,
     accessories: false,
+    aroma: false,
   });
   const [checkedCollection, setCheckedCollection] = useState({
     collection1: false,
@@ -24,8 +24,11 @@ const Catalog_1 = () => {
 
   const handleCheckboxChange = (name, isChecked) => {
     if (name in checkedItems) {
-      setCheckedItems((prevState) => ({
-        ...prevState,
+      setCheckedItems(() => ({
+        bedding: false,
+        clothes: false,
+        accessories: false,
+        aroma: false,
         [name]: isChecked,
       }));
     } else {
@@ -74,10 +77,7 @@ const Catalog_1 = () => {
         <aside className="filter">
           <div className="aside_filter">
             <h1>Категории</h1>
-            <Checkbox
-              label="Комплекты"
-              onChange={(isChecked) => handleCheckboxChange("sets", isChecked)}
-            />
+
             <Checkbox
               label="Постельное белье"
               onChange={(isChecked) =>
@@ -95,6 +95,10 @@ const Catalog_1 = () => {
               onChange={(isChecked) =>
                 handleCheckboxChange("accessories", isChecked)
               }
+            />
+            <Checkbox
+              label="Ароматы для дома"
+              onChange={(isChecked) => handleCheckboxChange("aroma", isChecked)}
             />
           </div>
           <div className="aside_filter">

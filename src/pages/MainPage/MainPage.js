@@ -16,7 +16,7 @@ const MainPage = () => {
             <div className="main_header_dot">
               <div />
             </div>
-            <div className="main_header_dot_text">Принты</div>
+            <div className="main_header_dot_text">Ароматы</div>
           </div>
           <div>
             <div className="main_header_dot">
@@ -28,7 +28,7 @@ const MainPage = () => {
             <div className="main_header_dot">
               <div />
             </div>
-            <div className="main_header_dot_text">Комлекты</div>
+            <div className="main_header_dot_text">Акссесуары</div>
           </div>
           <div>
             <div className="main_header_dot">
@@ -36,46 +36,74 @@ const MainPage = () => {
             </div>
             <div className="main_header_dot_text">Одежда</div>
           </div>
-          <div>
-            <div className="main_header_dot">
-              <div />
-            </div>
-            <div className="main_header_dot_text">Аксессуары</div>
-          </div>
           <img className="main_header_logo" src="./icons/logo.svg" />
         </div>
       </header>
       <main>
         <section className="main_section_1">
+          <h1>Специальные коллекции</h1>
           <div>
-            <div>
-              <img src="./images/main.png" alt="" />
-              <p>
-                Роскошный сон: Подберите идеальное постельное белье для вашего
-                дома
-              </p>
+            <div className="main_section_1_block">
+              <img alt="" src="/images/special_1.webp" />
+              <p>Сказки</p>
             </div>
-            <div>
-              <img src="./images/main_2.png" alt="" />
-              <p>
-                Нежные ткани, идеальные сны: Ваш выбор постельного белья здесь
-              </p>
+            <div className="main_section_1_block">
+              <img alt="" src="/images/special_2.webp" />
+              <p>Агиттекстиль</p>
             </div>
-            <div>
-              <img src="./images/main_3.png" alt="" />
-              <p>
-                Создайте уют с лучшим постельным бельем: качество, комфорт,
-                стиль
-              </p>
+            <div className="main_section_1_block">
+              <img alt="" src="/images/special_3.webp" />
+              <p>Узоры</p>
             </div>
-            <div>
-              <img src="./images/main.png" alt="" />
-              <p>Белье, которое дарит сон: коллекция для сладких сновидений</p>
+            <div className="main_section_1_block">
+              <img alt="" src="/images/special_4.webp" />
+              <p>Санкт-Петербург</p>
+            </div>
+            <div className="main_section_1_block">
+              <img alt="" src="/images/special_5.webp" />
+              <p>Таинства</p>
             </div>
           </div>
         </section>
-
         <section className="main_section_2">
+          <h1>Красивое постельное белье в интернет-магазине MOLLEN</h1>
+          <div>
+            <p>
+              Mollen — это роскошный текстиль и аксессуары для дома премиум
+              класса российского производства.
+            </p>
+            <p>
+              Мы придумали оригинальную идею капсульных коллекций, в которые
+              входят постельное белье, домашняя одежда и парфюм. Для создания
+              продукции мы используем только натуральные ткани высокого
+              качества: египетский хлопок макосатин 400 ТС и плотный шелк 22
+              момми.
+            </p>
+            <p>
+              Коллекции Mollen из магазина постельного белья премиум класса
+              станет украшением любого домашнего интерьера.
+            </p>
+            <h5>Функциональный подход</h5>
+            <p>
+              Все цвета постельного белья, от спокойных до ярких, хорошо
+              сочетаются друг с другом в любых комбинациях.
+            </p>
+            <h5>Уникальные принты</h5>
+            <p>
+              Принты разработанные авторами Mollen в сотрудничестве московской
+              студией Solstudio Textile Design, делают домашний текстиль
+              поистине роскошным: создают акцент в интерьере, позволяют добиться
+              идеальной сочетаемости однотонных тканей
+            </p>
+            <h5>Российский бренд</h5>
+            <p>
+              Мы создаем комплекты белья и шелковую женскую одежду при участии
+              ведущих специалистов страны: МАРХИ, Solstudio, Союз писателей
+              России, Nimax и других.
+            </p>
+          </div>
+        </section>
+        <section className="main_section_3">
           <div>
             <h1>Собери свой комплект на конструкторе</h1>
             <button>Собрать</button>
@@ -86,32 +114,32 @@ const MainPage = () => {
               name="Комлект Красный Бархат"
               collection="Бархатное путешествие"
               price="15000"
-              className="main_section_2_card"
+              className="main_section_3_card"
             />
             <Card
               category="Комплект"
               name="Комлект Желтая Пустыня"
               collection="Пески времени"
               price="19000"
-              className="main_section_2_card"
+              className="main_section_3_card"
             />
             <Card
               category="Комплект"
               name="Комлект Время Спокойствия"
               collection="Дивные времена"
               price="21000"
-              className="main_section_2_card"
+              className="main_section_3_card"
             />
             <Card
               category="Комплект"
               name="Комлект Синяя Жемчужина"
               collection="Глубина"
               price="17000"
-              className="main_section_2_card"
+              className="main_section_3_card"
             />
           </div>
         </section>
-        <section className="main_section_3">
+        <section className="main_section_4">
           <div>
             <h1>Каталог Mollen</h1>
             <div>
@@ -132,7 +160,7 @@ const MainPage = () => {
                 </li>
                 <li>
                   <div />
-                  <p>Принты</p>
+                  <p>Ароматы</p>
                 </li>
               </ul>
             </div>
@@ -154,14 +182,6 @@ const MainPage = () => {
           <div>
             <img src="./icons/logo.svg" />
           </div>
-        </section>
-        <section className="main_section_4">
-          <img src="./images/main.png" alt="" />
-
-          <img src="./images/main_3.png" alt="" />
-
-          <img src="./images/main.png" alt="" />
-          <img src="./images/main_3.png" alt="" />
         </section>
       </main>
       <Footer />
