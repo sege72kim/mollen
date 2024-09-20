@@ -41,27 +41,31 @@ const MainPage = () => {
       </header>
       <main>
         <section className="main_section_1">
-          <h1>Специальные коллекции</h1>
+          <h1>Навигатор по коллекции</h1>
           <div>
             <div className="main_section_1_block">
               <img alt="" src="/images/special_1.webp" />
-              <p>Сказки</p>
+              <p>Принты</p>
             </div>
             <div className="main_section_1_block">
               <img alt="" src="/images/special_2.webp" />
-              <p>Агиттекстиль</p>
+              <p>Готовые решения</p>
             </div>
             <div className="main_section_1_block">
               <img alt="" src="/images/special_3.webp" />
-              <p>Узоры</p>
+              <p>Белые комплекты</p>
             </div>
             <div className="main_section_1_block">
               <img alt="" src="/images/special_4.webp" />
-              <p>Санкт-Петербург</p>
+              <p>Одежда</p>
             </div>
             <div className="main_section_1_block">
               <img alt="" src="/images/special_5.webp" />
-              <p>Таинства</p>
+              <p>Акссесуары</p>
+            </div>
+            <div className="main_section_1_block">
+              <img alt="" src="/images/special_6.webp" />
+              <p>Ароматы</p>
             </div>
           </div>
         </section>
@@ -108,39 +112,60 @@ const MainPage = () => {
           </div>
         </section>
         <section className="main_section_3">
-          <div>
-            <h1>Собери свой комплект на конструкторе</h1>
-            <button>Собрать</button>
+          <div className="main_special">
+            <div>
+              <h1>Коллекция "Композиторы"</h1>
+              <p>
+                Невозможно представить себе мировую культуру без произведений
+                Чайковского, Мусоргского, Рахманинова, Прокофьева: на протяжении
+                многих лет симфонии, оперы и романсы русских композиторов
+                служили золотым резервом музыкального наследия человечества.
+                Русская классическая музыка — неиссякаемый источник вдохновения
+                для каждого.
+              </p>
+              <button>Подробнее</button>
+            </div>
+            <video autoPlay loop muted width="600">
+              <source src="/videos/special_1.mp4" type="video/mp4" />
+              Ваш браузер не поддерживает тег <code>video</code>.
+            </video>
           </div>
-          <div>
-            <Card
-              category="Комплект"
-              name="Комлект Красный Бархат"
-              collection="Бархатное путешествие"
-              price="15000"
-              className="main_section_3_card"
-            />
-            <Card
-              category="Комплект"
-              name="Комлект Желтая Пустыня"
-              collection="Пески времени"
-              price="19000"
-              className="main_section_3_card"
-            />
-            <Card
-              category="Комплект"
-              name="Комлект Время Спокойствия"
-              collection="Дивные времена"
-              price="21000"
-              className="main_section_3_card"
-            />
-            <Card
-              category="Комплект"
-              name="Комлект Синяя Жемчужина"
-              collection="Глубина"
-              price="17000"
-              className="main_section_3_card"
-            />
+          <div className="main_special">
+            <video autoPlay loop muted width="600">
+              <source src="/videos/special_2.mp4" type="video/mp4" />
+              Ваш браузер не поддерживает тег <code>video</code>.
+            </video>
+            <div>
+              <h1>Коллекция "Сказки"</h1>
+              <p>
+                Коллекция «Сказки» — русские сны наяву, эклектичное сочетание
+                мотивов традиционного узора разных регионов России. В коллекции
+                спрятаны пасхалки, объединяющие сюжетные линии принтов.
+                Маленькая птичка Кузябочка то появляется, то прячется в
+                хитросплетениях узоров ткани.
+              </p>
+              <button>Подробнее</button>
+            </div>
+          </div>
+          <div className="main_special">
+            <div>
+              <h1>Коллекция "Агиттекстиль"</h1>
+              <p>
+                Коллекция постельного белья создана в стиле Агиттекстиля
+                1920-1930 хх. Наши собиратели льна в летнем поле — своеобразный
+                оммаж советским художникам Любови Поповой, Александру Родченко и
+                Варваре Степановой. Четкий ритм повторяющихся изображений,
+                оригинальная цветовая палитра и эффект оптической иллюзии —
+                когда орнамент оказывается составлен из сюжетных сценок с
+                участием разных персонажей —главные приметы этого удивительного
+                стиля.
+              </p>
+              <button>Подробнее</button>
+            </div>
+            <video autoPlay loop muted width="600">
+              <source src="/videos/special_3.mp4" type="video/mp4" />
+              Ваш браузер не поддерживает тег <code>video</code>.
+            </video>
           </div>
         </section>
         <section className="main_section_4">
@@ -185,6 +210,32 @@ const MainPage = () => {
           </div>
           <div>
             <img src="./icons/logo.svg" />
+          </div>
+        </section>
+        <section className="main_section_1">
+          {" "}
+          <h1>Мы в соцсетях</h1>
+          <div>
+            <div className="main_section_1_block">
+              <img alt="" src="/images/social_1.webp" />
+              <p>VK</p>
+            </div>
+            <div className="main_section_1_block">
+              <img alt="" src="/images/social_2.webp" />
+              <p>Pinterest</p>
+            </div>
+            <div className="main_section_1_block">
+              <img alt="" src="/images/social_3.webp" />
+              <p>Telegram</p>
+            </div>
+            <div className="main_section_1_block">
+              <img alt="" src="/images/social_4.webp" />
+              <p>Facebook</p>
+            </div>
+            <div className="main_section_1_block">
+              <img alt="" src="/images/social_5.webp" />
+              <p>instagram</p>
+            </div>
           </div>
         </section>
       </main>
