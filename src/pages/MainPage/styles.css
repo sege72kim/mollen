@@ -227,6 +227,11 @@ div {
   border-radius: 60px;
   background-color: rgb(78, 118, 198);
   font-size: 14px;
+  transition: all 0.3s ease;
+}
+.main_special div button:hover {
+  background-color: rgb(56, 90, 157);
+  transform: scale(0.98);
 }
 .main_section_4 {
   height: 780px;

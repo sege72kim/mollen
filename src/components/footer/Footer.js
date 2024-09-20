@@ -47,9 +47,6 @@ const Footer = () => {
                 <img alt="" src="/icons/fb.svg" />
               </li>
               <li>
-                <img alt="" src="/icons/youtube.svg" />
-              </li>
-              <li>
                 <img alt="" src="/icons/instagram.svg" />
               </li>
             </ul>

@@ -17,6 +17,7 @@ nav {
 }
 .menu_button {
   display: flex;
+  flex-direction: row;
   column-gap: 7px;
   cursor: pointer;
 }
@@ -99,4 +100,31 @@ nav li:hover {
 }
 .buy_storage:hover {
   transform: scale(1.1);
+}
+@media (max-width: 1200px) {
+  nav ul {
+    column-gap: 8px;
+  }
+  nav li {
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+  nav li div {
+    display: none;
+  }
+  .buy_storage {
+    margin-left: 0px;
+  }
+}
+@media (max-width: 600px) {
+  .menu_button {
+    flex-direction: column;
+    row-gap: 4px;
+  }
+  .text_button {
+    display: none;
+  }
 }
