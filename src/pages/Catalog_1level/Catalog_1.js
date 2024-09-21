@@ -39,30 +39,12 @@ const Catalog_1 = () => {
     }
   };
 
-  const isAnyChecked = () => {
-    const anyItemChecked = Object.values(checkedItems).some(
-      (value) => value === true
-    );
-    const anyCollectionChecked = Object.values(checkedCollection).some(
-      (value) => value === true
-    );
-    return anyItemChecked || anyCollectionChecked;
-  };
-
-  useEffect(() => {
-    if (isAnyChecked()) {
-      setLevel("closed-catalog");
-    } else {
-      setLevel("");
-    }
-  }, [checkedItems, checkedCollection]);
-
   return (
     <div className="catalog_1">
       <Preloader />
       <header>
         <Navigation color="black" />
-        <div className={`header_catalog_1 ${level}`}>
+        <div className={`header_catalog_1`}>
           <h1>Новая коллекция</h1>
           <div>
             <p>
@@ -73,7 +55,7 @@ const Catalog_1 = () => {
           </div>
         </div>
       </header>
-      <main className={`main-catalog-${level}`}>
+      <main className={`main-catalog-`}>
         <aside className="filter">
           <div className="aside_filter">
             <h1>Категории</h1>
