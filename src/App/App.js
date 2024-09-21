@@ -6,8 +6,8 @@ import Catalog_1 from "../pages/Catalog_1level/Catalog_1";
 const App = () => {
   return (
     <div className="App">
-      <MainPage />
-      {/* <Catalog_1 /> */}
+      {/* <MainPage /> */}
+      <Catalog_1 />
     </div>
   );
 };

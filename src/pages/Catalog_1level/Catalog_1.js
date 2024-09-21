@@ -20,6 +20,7 @@ const Catalog_1 = () => {
     collection4: false,
     collection5: false,
     collection6: false,
+    collection7: false,
   });
 
   const handleCheckboxChange = (name, isChecked) => {
@@ -38,6 +39,60 @@ const Catalog_1 = () => {
       }));
     }
   };
+
+  const fetchProducts = async (specialCategory) => {
+    try {
+      const response = await fetch(`/api/products`);
+
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+
+      const data = await response.json();
+
+      if (!Array.isArray(data)) {
+        throw new Error("Полученные данные не являются массивом");
+      }
+
+      const filterByCategory = (category) => {
+        return data.flatMap((product) =>
+          product.filter((item) => item.category === category)
+        );
+      };
+
+      const filterBySpecial = (special) => {
+        return data.flatMap((product) =>
+          product.filter((item) => item.special === special)
+        );
+      };
+
+      const bedding = filterByCategory("Белье");
+      const clothes = filterByCategory("Одежда");
+      const accessories = filterByCategory("Аксессуары");
+      const aroma = filterByCategory("Ароматы");
+
+      const specialProducts = filterBySpecial(specialCategory);
+
+      console.log(bedding);
+      console.log(clothes);
+      console.log(accessories);
+      console.log(aroma);
+      console.log(specialProducts);
+
+      return {
+        bedding,
+        clothes,
+        accessories,
+        aroma,
+        specialProducts,
+      };
+    } catch (error) {
+      console.error("Ошибка при получении данных:", error);
+    }
+  };
+
+  // Пример вызова функции для категории "Сказки"
+  fetchProducts("Сказки");
 
   return (
     <div className="catalog_1">
