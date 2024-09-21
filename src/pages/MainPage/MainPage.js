@@ -162,7 +162,7 @@ const MainPage = () => {
               </p>
               <button>Подробнее</button>
             </div>
-            <video autoPlay loop muted width="600">
+            <video autoPlay loop muted width="600" playsInline>
               <source src="/videos/special_3.mp4" type="video/mp4" />
               Ваш браузер не поддерживает тег <code>video</code>.
             </video>

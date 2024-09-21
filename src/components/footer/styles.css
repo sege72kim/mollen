@@ -57,7 +57,7 @@ footer {
 .number_footer h1 {
   font-size: 20px;
   color: #1e1e1e;
-  font-weight: 590;
+  font-weight: 500;
 }
 .number_footer p {
   font-size: 18px;
@@ -77,4 +77,47 @@ footer {
 }
 .footer_icons li:hover {
   transform: scale(1.4);
+}
+@media (max-width: 1200px) {
+  .footer_list_container {
+    column-gap: 40px;
+  }
+}
+@media (max-width: 800px) {
+  footer {
+    padding-bottom: 50px;
+  }
+  .footer_list_container {
+    display: none;
+  }
+  .footer_container {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+  }
+  .footer_start_container {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .footer_end_container {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .number_footer p {
+    margin-top: 10px;
+    margin-bottom: 30px;
+  }
+  .footer_start_container > div {
+    position: absolute;
+    margin-top: 350px;
+  }
+  .footer_start_container img {
+    margin-bottom: 30px;
+  }
+  .footer_icons ul {
+    column-gap: 35px;
+  }
 }
