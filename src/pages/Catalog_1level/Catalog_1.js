@@ -2,10 +2,10 @@ import React, { useState, useEffect } from "react";
 import "./styles.css";
 import Preloader from "../../components/preloader/Preloader";
 import Navigation from "../../components/navigation/Navigation";
-import Checkbox from "../../components/checkbox/Checkbox";
 import Footer from "../../components/footer/Footer";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchData } from "../../redux/productSlice";
+import AsideFilter from "../../components/aside/AsideFilter";
 
 const Catalog_1 = () => {
   const dispatch = useDispatch();
@@ -88,75 +88,10 @@ const Catalog_1 = () => {
         </div>
       </header>
       <main className={`main-catalog-`}>
-        <aside className="filter">
-          <div className="aside_filter">
-            <h1>Категории</h1>
-
-            <Checkbox
-              label="Постельное белье"
-              onChange={() => changePickedCategory("bedding")}
-              state={pickedCategory}
-              category="bedding"
-            />
-            <Checkbox
-              label="Одежда"
-              onChange={() => changePickedCategory("clothes")}
-              state={pickedCategory}
-              category="clothes"
-            />
-            <Checkbox
-              label="Аксессуары"
-              onChange={() => changePickedCategory("accsessories")}
-              state={pickedCategory}
-              category="accsessories"
-            />
-            <Checkbox
-              label="Ароматы для дома"
-              onChange={() => changePickedCategory("aroma")}
-              state={pickedCategory}
-              category="aroma"
-            />
-          </div>
-          <div className="aside_filter">
-            <h1>Коллекция</h1>
-            <Checkbox
-              label="Глубина"
-              onChange={() => changePickedCategory("special1")}
-              state={pickedCategory}
-              category="special1"
-            />
-            <Checkbox
-              label="Бархатное путешествие"
-              onChange={() => changePickedCategory("special2")}
-              state={pickedCategory}
-              category="special2"
-            />
-            <Checkbox
-              label="Дивные времена"
-              onChange={() => changePickedCategory("special3")}
-              state={pickedCategory}
-              category="special3"
-            />
-            <Checkbox
-              label="Летние грёзы"
-              onChange={() => changePickedCategory("special4")}
-              state={pickedCategory}
-              category="special4"
-            />
-            <Checkbox
-              label="Зимняя сказка"
-              onChange={() => changePickedCategory("special5")}
-              state={pickedCategory}
-              category="special5"
-            />
-            <Checkbox
-              label="Осенний вальс"
-              onChange={() => changePickedCategory("special6")}
-              state={pickedCategory}
-              category="special6"
-            />
-          </div>
-        </aside>
+        <AsideFilter
+          pickedCategory={pickedCategory}
+          changePickedCategory={changePickedCategory}
+        />
         <section>
           <a>Главная/Каталог</a>
           <h1></h1>

@@ -48,31 +48,9 @@
   background-color: #426bbd;
   color: white;
 }
-.closed-catalog {
-  transform: translateY(-530px);
-}
 .catalog_1 main {
   transition: all 1s ease;
   height: 100%;
   border-top: 1px solid #eceae7;
   display: flex;
-  padding-top: 40px;
-}
-.main-catalog-closed-catalog {
-  transform: translateY(-530px);
-}
-.filter {
-  width: 360px;
-  overflow: hidden;
-  margin-left: 40px;
-  display: flex;
-  flex-direction: column;
-  row-gap: 36px;
-}
-.filter h1 {
-  font-size: 14px;
-  font-weight: 600;
-  color: #1e1e1e;
-  text-transform: uppercase;
-  margin-bottom: 18px;
 }
