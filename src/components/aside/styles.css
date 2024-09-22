@@ -1,5 +1,6 @@
 .filter {
   width: 360px;
+
   overflow: hidden;
   margin-left: 40px;
   display: flex;

@@ -54,3 +54,6 @@
   border-top: 1px solid #eceae7;
   display: flex;
 }
+.main_catalog > section {
+  padding-top: 40px;
+}

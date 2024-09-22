@@ -6,6 +6,7 @@ import Footer from "../../components/footer/Footer";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchData } from "../../redux/productSlice";
 import AsideFilter from "../../components/aside/AsideFilter";
+import CatalogBlock from "../../components/catalog/CatalogBlock";
 
 const Catalog_1 = () => {
   const dispatch = useDispatch();
@@ -46,6 +47,7 @@ const Catalog_1 = () => {
         product.complect?.filter((item) => item.category === category) || []
     );
   };
+  const products = Object.values(data).flat();
 
   const bedding = filterByCategory("Белье");
   const clothes = filterByCategory("Одежда");
@@ -87,15 +89,50 @@ const Catalog_1 = () => {
           </div>
         </div>
       </header>
-      <main className={`main-catalog-`}>
+      <main className={`main_catalog`}>
         <AsideFilter
           pickedCategory={pickedCategory}
           changePickedCategory={changePickedCategory}
         />
         <section>
-          <a>Главная/Каталог</a>
-          <h1></h1>
-          <button onClick={() => console.log(pickedCategory)}>233232</button>
+          <section>
+            {pickedCategory === "" && (
+              <CatalogBlock category="Популярные товары" data={products} />
+            )}
+            {pickedCategory === "bedding" && (
+              <CatalogBlock category="Постельное белье" data={bedding} />
+            )}
+            {pickedCategory === "clothes" && (
+              <CatalogBlock category="Одежда" data={clothes} />
+            )}
+            {pickedCategory === "accsessories" && (
+              <CatalogBlock category="Аксессуары" data={accessories} />
+            )}
+            {pickedCategory === "aroma" && (
+              <CatalogBlock category="Ароматы" data={aroma} />
+            )}
+            {pickedCategory === "special1" && (
+              <CatalogBlock category="Коллекция Сказки" data={special1} />
+            )}
+            {pickedCategory === "special2" && (
+              <CatalogBlock category="Коллекция Агиттекстиль" data={special2} />
+            )}
+            {pickedCategory === "special3" && (
+              <CatalogBlock category="Коллекция Узоры" data={special3} />
+            )}
+            {pickedCategory === "special4" && (
+              <CatalogBlock category="Коллекция Композиторы" data={special4} />
+            )}
+            {pickedCategory === "special5" && (
+              <CatalogBlock
+                category="Коллекция Санкт-Петербург"
+                data={special5}
+              />
+            )}
+            {pickedCategory === "special6" && (
+              <CatalogBlock category="Коллекция Степи" data={special6} />
+            )}
+          </section>
         </section>
       </main>
       <Footer />

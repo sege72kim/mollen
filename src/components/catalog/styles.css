@@ -1,0 +1,28 @@
+.path {
+  font-size: 14px;
+  font-weight: 300;
+}
+.catalog_header {
+  margin-left: 40px;
+}
+.catalog_header h1 {
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 52px;
+  text-transform: uppercase;
+  margin-top: 16px;
+}
+.catalog_list {
+  margin-top: 60px;
+  width: 90%;
+  margin-left: 40px;
+  border: 1px #eceae7 solid;
+}
+.catalog_list > div {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: 15px;
+}
+.catalog_box {
+  margin-bottom: 200px;
+}
