@@ -5,6 +5,7 @@ const Navigation = (props) => {
   const colorClass =
     props.color === "black" ? "navigation-black" : "navigation-white";
   const colorButton = props.color === "black" ? "" : "1";
+
   return (
     <nav className={colorClass}>
       <div className="logo">
@@ -17,11 +18,11 @@ const Navigation = (props) => {
         <div className="text_button">каталог</div>
       </div>
       <ul>
-        <li>
+        <li className={`nav_button-${colorButton}`}>
           <img src={`./icons/search${colorButton}.svg`} />
           <div>поиск</div>
         </li>
-        <li>
+        <li className={`nav_button-${colorButton}`}>
           <img src={`./icons/bed${colorButton}.svg`} />
           <div>конструктор</div>
         </li>

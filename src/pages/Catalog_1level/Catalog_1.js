@@ -4,96 +4,117 @@ import Preloader from "../../components/preloader/Preloader";
 import Navigation from "../../components/navigation/Navigation";
 import Checkbox from "../../components/checkbox/Checkbox";
 import Footer from "../../components/footer/Footer";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchData } from "../../redux/productSlice";
 
 const Catalog_1 = () => {
-  const [level, setLevel] = useState("");
-  const [checkedItems, setCheckedItems] = useState({
-    bedding: false,
-    clothes: false,
-    accessories: false,
-    aroma: false,
-  });
-  const [checkedCollection, setCheckedCollection] = useState({
-    collection1: false,
-    collection2: false,
-    collection3: false,
-    collection4: false,
-    collection5: false,
-    collection6: false,
-    collection7: false,
-  });
+  const dispatch = useDispatch();
+  const { data, status, error } = useSelector((state) => state.data);
 
-  const handleCheckboxChange = (name, isChecked) => {
-    if (name in checkedItems) {
-      setCheckedItems(() => ({
-        bedding: false,
-        clothes: false,
-        accessories: false,
-        aroma: false,
-        [name]: isChecked,
-      }));
-    } else {
-      setCheckedCollection((prevState) => ({
-        ...prevState,
-        [name]: isChecked,
-      }));
+  useEffect(() => {
+    if (status === "idle") {
+      dispatch(fetchData());
     }
-  };
+  }, [status, dispatch]);
 
-  const fetchProducts = async (specialCategory) => {
-    try {
-      const response = await fetch(`/api/products`);
+  if (status === "loading") {
+    return <div>Loading...</div>;
+  }
 
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
+  if (status === "failed") {
+    return <div>Error: {error}</div>;
+  }
 
-      const data = await response.json();
+  // const [level, setLevel] = useState("");
+  // const [checkedItems, setCheckedItems] = useState({
+  //   bedding: false,
+  //   clothes: false,
+  //   accessories: false,
+  //   aroma: false,
+  // });
+  // const [checkedCollection, setCheckedCollection] = useState({
+  //   collection1: false,
+  //   collection2: false,
+  //   collection3: false,
+  //   collection4: false,
+  //   collection5: false,
+  //   collection6: false,
+  //   collection7: false,
+  // });
 
-      if (!Array.isArray(data)) {
-        throw new Error("Полученные данные не являются массивом");
-      }
+  // const handleCheckboxChange = (name, isChecked) => {
+  //   if (name in checkedItems) {
+  //     setCheckedItems(() => ({
+  //       bedding: false,
+  //       clothes: false,
+  //       accessories: false,
+  //       aroma: false,
+  //       [name]: isChecked,
+  //     }));
+  //   } else {
+  //     setCheckedCollection((prevState) => ({
+  //       ...prevState,
+  //       [name]: isChecked,
+  //     }));
+  //   }
+  // };
 
-      const filterByCategory = (category) => {
-        return data.flatMap((product) =>
-          product.filter((item) => item.category === category)
-        );
-      };
+  // const fetchProducts = async (specialCategory) => {
+  //   try {
+  //     const response = await fetch(`/api/products`);
 
-      const filterBySpecial = (special) => {
-        return data.flatMap((product) =>
-          product.filter((item) => item.special === special)
-        );
-      };
+  //     if (!response.ok) {
+  //       throw new Error("Network response was not ok");
+  //     }
 
-      const bedding = filterByCategory("Белье");
-      const clothes = filterByCategory("Одежда");
-      const accessories = filterByCategory("Аксессуары");
-      const aroma = filterByCategory("Ароматы");
+  //     const data = await response.json();
 
-      const specialProducts = filterBySpecial(specialCategory);
+  //     if (!Array.isArray(data)) {
+  //       throw new Error("Полученные данные не являются массивом");
+  //     }
 
-      console.log(bedding);
-      console.log(clothes);
-      console.log(accessories);
-      console.log(aroma);
-      console.log(specialProducts);
+  //     const filterByCategory = (category) => {
+  //       return data.flatMap((product) =>
+  //         product.filter(
+  //           (item) => item.category === category && item.special === "none"
+  //         )
+  //       );
+  //     };
 
-      return {
-        bedding,
-        clothes,
-        accessories,
-        aroma,
-        specialProducts,
-      };
-    } catch (error) {
-      console.error("Ошибка при получении данных:", error);
-    }
-  };
+  //     const filterBySpecial = (special) => {
+  //       return data.flatMap((product) =>
+  //         product.filter((item) => item.special === special)
+  //       );
+  //     };
+
+  //     const bedding = filterByCategory("Белье");
+  //     const clothes = filterByCategory("Одежда");
+  //     const accessories = filterByCategory("Аксессуары");
+  //     const aroma = filterByCategory("Ароматы");
+
+  //     const specialProducts = filterBySpecial(specialCategory);
+
+  //     console.log(bedding);
+  //     console.log(clothes);
+  //     console.log(accessories);
+  //     console.log(aroma);
+  //     console.log(specialProducts);
+
+  //     return {
+  //       bedding,
+  //       clothes,
+  //       accessories,
+  //       aroma,
+  //       specialProducts,
+  //     };
+  //   } catch (error) {
+  //     console.error("Ошибка при получении данных:", error);
+  //   }
+  // };
 
   // Пример вызова функции для категории "Сказки"
-  fetchProducts("Сказки");
-
+  // fetchProducts("Сказки");
+  console.log(data);
   return (
     <div className="catalog_1">
       <Preloader />
@@ -115,7 +136,7 @@ const Catalog_1 = () => {
           <div className="aside_filter">
             <h1>Категории</h1>
 
-            <Checkbox
+            {/* <Checkbox
               label="Постельное белье"
               onChange={(isChecked) =>
                 handleCheckboxChange("bedding", isChecked)
@@ -175,7 +196,7 @@ const Catalog_1 = () => {
               onChange={(isChecked) =>
                 handleCheckboxChange("collection6", isChecked)
               }
-            />
+            /> */}
           </div>
         </aside>
         <section>

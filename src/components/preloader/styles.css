@@ -92,3 +92,17 @@
 .stage-5 {
   display: none;
 }
+@media (max-width: 800px) {
+  .stage-1 .white_preload1,
+  .stage-2 .white_preload1,
+  .stage-3 .white_preload1,
+  .stage-4 .white_preload1 {
+    transform: translateY(-100%);
+  }
+  .stage-1 .white_preload2,
+  .stage-2 .white_preload2,
+  .stage-3 .white_preload2,
+  .stage-4 .white_preload2 {
+    transform: translateY(-100%);
+  }
+}
