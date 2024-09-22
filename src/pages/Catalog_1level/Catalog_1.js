@@ -10,6 +10,7 @@ import { fetchData } from "../../redux/productSlice";
 const Catalog_1 = () => {
   const dispatch = useDispatch();
   const { data, status, error } = useSelector((state) => state.data);
+  const [pickedCategory, setPickedCategory] = useState("");
 
   useEffect(() => {
     if (status === "idle") {
@@ -25,96 +26,51 @@ const Catalog_1 = () => {
     return <div>Error: {error}</div>;
   }
 
-  // const [level, setLevel] = useState("");
-  // const [checkedItems, setCheckedItems] = useState({
-  //   bedding: false,
-  //   clothes: false,
-  //   accessories: false,
-  //   aroma: false,
-  // });
-  // const [checkedCollection, setCheckedCollection] = useState({
-  //   collection1: false,
-  //   collection2: false,
-  //   collection3: false,
-  //   collection4: false,
-  //   collection5: false,
-  //   collection6: false,
-  //   collection7: false,
-  // });
+  const filterByCategory = (category) => {
+    return data.flatMap((product) =>
+      product.filter(
+        (item) => item.category === category && item.special === "none"
+      )
+    );
+  };
 
-  // const handleCheckboxChange = (name, isChecked) => {
-  //   if (name in checkedItems) {
-  //     setCheckedItems(() => ({
-  //       bedding: false,
-  //       clothes: false,
-  //       accessories: false,
-  //       aroma: false,
-  //       [name]: isChecked,
-  //     }));
-  //   } else {
-  //     setCheckedCollection((prevState) => ({
-  //       ...prevState,
-  //       [name]: isChecked,
-  //     }));
-  //   }
-  // };
+  const filterBySpecial = (special) => {
+    return data.flatMap((product) =>
+      product.filter((item) => item.special === special)
+    );
+  };
 
-  // const fetchProducts = async (specialCategory) => {
-  //   try {
-  //     const response = await fetch(`/api/products`);
+  const filterByCategory2 = (category) => {
+    return bedding.flatMap(
+      (product) =>
+        product.complect?.filter((item) => item.category === category) || []
+    );
+  };
 
-  //     if (!response.ok) {
-  //       throw new Error("Network response was not ok");
-  //     }
+  const bedding = filterByCategory("Белье");
+  const clothes = filterByCategory("Одежда");
+  const accessories = filterByCategory("Аксессуары");
+  const aroma = filterByCategory("Ароматы");
 
-  //     const data = await response.json();
+  const special1 = filterBySpecial("Сказки");
+  const special2 = filterBySpecial("Агиттекстиль");
+  const special3 = filterBySpecial("Узоры");
+  const special4 = filterBySpecial("Композиторы");
+  const special5 = filterBySpecial("Санкт Петербург");
+  const special6 = filterBySpecial("Степи");
 
-  //     if (!Array.isArray(data)) {
-  //       throw new Error("Полученные данные не являются массивом");
-  //     }
+  const bedding1 = filterByCategory2("Наволочка");
+  const bedding2 = filterByCategory2("Пододеяльник");
+  const bedding3 = filterByCategory2("Простыня");
 
-  //     const filterByCategory = (category) => {
-  //       return data.flatMap((product) =>
-  //         product.filter(
-  //           (item) => item.category === category && item.special === "none"
-  //         )
-  //       );
-  //     };
+  const changePickedCategory = (currentCategory) => {
+    if (currentCategory === pickedCategory) {
+      setPickedCategory("");
+    } else {
+      setPickedCategory(currentCategory);
+    }
+  };
 
-  //     const filterBySpecial = (special) => {
-  //       return data.flatMap((product) =>
-  //         product.filter((item) => item.special === special)
-  //       );
-  //     };
-
-  //     const bedding = filterByCategory("Белье");
-  //     const clothes = filterByCategory("Одежда");
-  //     const accessories = filterByCategory("Аксессуары");
-  //     const aroma = filterByCategory("Ароматы");
-
-  //     const specialProducts = filterBySpecial(specialCategory);
-
-  //     console.log(bedding);
-  //     console.log(clothes);
-  //     console.log(accessories);
-  //     console.log(aroma);
-  //     console.log(specialProducts);
-
-  //     return {
-  //       bedding,
-  //       clothes,
-  //       accessories,
-  //       aroma,
-  //       specialProducts,
-  //     };
-  //   } catch (error) {
-  //     console.error("Ошибка при получении данных:", error);
-  //   }
-  // };
-
-  // Пример вызова функции для категории "Сказки"
-  // fetchProducts("Сказки");
-  console.log(data);
   return (
     <div className="catalog_1">
       <Preloader />
@@ -136,72 +92,75 @@ const Catalog_1 = () => {
           <div className="aside_filter">
             <h1>Категории</h1>
 
-            {/* <Checkbox
+            <Checkbox
               label="Постельное белье"
-              onChange={(isChecked) =>
-                handleCheckboxChange("bedding", isChecked)
-              }
+              onChange={() => changePickedCategory("bedding")}
+              state={pickedCategory}
+              category="bedding"
             />
             <Checkbox
               label="Одежда"
-              onChange={(isChecked) =>
-                handleCheckboxChange("clothes", isChecked)
-              }
+              onChange={() => changePickedCategory("clothes")}
+              state={pickedCategory}
+              category="clothes"
             />
             <Checkbox
               label="Аксессуары"
-              onChange={(isChecked) =>
-                handleCheckboxChange("accessories", isChecked)
-              }
+              onChange={() => changePickedCategory("accsessories")}
+              state={pickedCategory}
+              category="accsessories"
             />
             <Checkbox
               label="Ароматы для дома"
-              onChange={(isChecked) => handleCheckboxChange("aroma", isChecked)}
+              onChange={() => changePickedCategory("aroma")}
+              state={pickedCategory}
+              category="aroma"
             />
           </div>
           <div className="aside_filter">
             <h1>Коллекция</h1>
             <Checkbox
               label="Глубина"
-              onChange={(isChecked) =>
-                handleCheckboxChange("collection1", isChecked)
-              }
+              onChange={() => changePickedCategory("special1")}
+              state={pickedCategory}
+              category="special1"
             />
             <Checkbox
               label="Бархатное путешествие"
-              onChange={(isChecked) =>
-                handleCheckboxChange("collection2", isChecked)
-              }
+              onChange={() => changePickedCategory("special2")}
+              state={pickedCategory}
+              category="special2"
             />
             <Checkbox
               label="Дивные времена"
-              onChange={(isChecked) =>
-                handleCheckboxChange("collection3", isChecked)
-              }
+              onChange={() => changePickedCategory("special3")}
+              state={pickedCategory}
+              category="special3"
             />
             <Checkbox
               label="Летние грёзы"
-              onChange={(isChecked) =>
-                handleCheckboxChange("collection4", isChecked)
-              }
+              onChange={() => changePickedCategory("special4")}
+              state={pickedCategory}
+              category="special4"
             />
             <Checkbox
               label="Зимняя сказка"
-              onChange={(isChecked) =>
-                handleCheckboxChange("collection5", isChecked)
-              }
+              onChange={() => changePickedCategory("special5")}
+              state={pickedCategory}
+              category="special5"
             />
             <Checkbox
               label="Осенний вальс"
-              onChange={(isChecked) =>
-                handleCheckboxChange("collection6", isChecked)
-              }
-            /> */}
+              onChange={() => changePickedCategory("special6")}
+              state={pickedCategory}
+              category="special6"
+            />
           </div>
         </aside>
         <section>
           <a>Главная/Каталог</a>
           <h1></h1>
+          <button onClick={() => console.log(pickedCategory)}>233232</button>
         </section>
       </main>
       <Footer />
