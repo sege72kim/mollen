@@ -2,20 +2,16 @@
   font-size: 14px;
   font-weight: 300;
 }
-.catalog_header {
-  margin-left: 40px;
-}
 .catalog_header h1 {
   font-weight: 500;
   font-size: 40px;
   line-height: 52px;
   text-transform: uppercase;
   margin-top: 16px;
+  margin-bottom: 40px;
 }
 .catalog_list {
-  margin-top: 60px;
   width: 90%;
-  margin-left: 40px;
   border: 1px #eceae7 solid;
 }
 .catalog_list > div {
@@ -25,4 +21,35 @@
 }
 .catalog_box {
   margin-bottom: 200px;
+}
+.second_category {
+  width: 90%;
+}
+.second_category > div {
+  display: flex;
+  flex-direction: column;
+  margin: 15px;
+}
+
+.second_category > div > div:nth-child(2) {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.second_category button {
+  border: 1px solid #eceae7;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  text-transform: uppercase;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+.second_category button:hover {
+  background-color: #f5f3f0;
+}
+.category_active {
+  background-color: #f5f3f0;
 }

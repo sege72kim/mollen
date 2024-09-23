@@ -41,12 +41,6 @@ const Catalog_1 = () => {
     );
   };
 
-  const filterByCategory2 = (category) => {
-    return bedding.flatMap(
-      (product) =>
-        product.complect?.filter((item) => item.category === category) || []
-    );
-  };
   const products = Object.values(data).flat();
 
   const bedding = filterByCategory("Белье");
@@ -60,10 +54,6 @@ const Catalog_1 = () => {
   const special4 = filterBySpecial("Композиторы");
   const special5 = filterBySpecial("Санкт Петербург");
   const special6 = filterBySpecial("Степи");
-
-  const bedding1 = filterByCategory2("Наволочка");
-  const bedding2 = filterByCategory2("Пододеяльник");
-  const bedding3 = filterByCategory2("Простыня");
 
   const changePickedCategory = (currentCategory) => {
     if (currentCategory === pickedCategory) {

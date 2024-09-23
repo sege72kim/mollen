@@ -1,7 +1,6 @@
 import React from "react";
 import "./styles.css";
 import Navigation from "../../components/navigation/Navigation";
-import Card from "../../components/card/Card";
 import Footer from "../../components/footer/Footer";
 import Preloader from "../../components/preloader/Preloader";
 const MainPage = () => {

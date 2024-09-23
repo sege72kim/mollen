@@ -9,6 +9,7 @@ input[type="checkbox"] {
   font-size: 16px;
   color: #4e76c6;
   margin-bottom: 16px;
+  width: 100%;
 }
 
 .custom-checkbox {
