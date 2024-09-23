@@ -2,7 +2,7 @@ import { React, useState } from "react";
 import "./styles.css";
 import Card from "../card/card";
 
-const CatalogBlock = ({ category, data, onChange }) => {
+const CatalogBlock = ({ category, data, onFilter }) => {
   const [category2, setCategory2] = useState("bedding");
   const changeCategory2 = (currentCategory) => {
     setCategory2(currentCategory);
@@ -20,7 +20,7 @@ const CatalogBlock = ({ category, data, onChange }) => {
   const [isChecked, setIsChecked] = useState(false);
   const openFilter = () => {
     setIsChecked(!isChecked);
-    onChange(!isChecked);
+    onFilter(!isChecked);
   };
   return (
     <div className="catalog_box">

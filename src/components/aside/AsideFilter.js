@@ -5,12 +5,12 @@ const AsideFilter = ({
   pickedCategory,
   changePickedCategory,
   filterStatus,
-  onChange,
+  onFilter2,
 }) => {
   const [isChecked, setIsChecked] = useState(false);
   const openFilter = () => {
     setIsChecked(!isChecked);
-    onChange(!isChecked);
+    onFilter2(!isChecked);
   };
   return (
     <aside className={`filter${filterStatus}`}>

@@ -90,7 +90,7 @@ const Catalog_1 = () => {
           pickedCategory={pickedCategory}
           changePickedCategory={changePickedCategory}
           filterStatus={filterStatus}
-          onChange={() => filterOpen()}
+          onFilter2={() => filterOpen()}
         />
         <section>
           <section>
@@ -98,63 +98,63 @@ const Catalog_1 = () => {
               <CatalogBlock
                 category="Популярные товары"
                 data={products}
-                onChange={() => filterOpen()}
+                onFilter={() => filterOpen()}
               />
             )}
             {pickedCategory === "bedding" && (
               <CatalogBlock
                 category="Постельное белье"
                 data={bedding}
-                onChange={() => filterOpen()}
+                onFilter={() => filterOpen()}
               />
             )}
             {pickedCategory === "clothes" && (
               <CatalogBlock
                 category="Одежда"
                 data={clothes}
-                onChange={() => filterOpen()}
+                onFilter={() => filterOpen()}
               />
             )}
             {pickedCategory === "accsessories" && (
               <CatalogBlock
                 category="Аксессуары"
                 data={accessories}
-                onChange={() => filterOpen()}
+                onFilter={() => filterOpen()}
               />
             )}
             {pickedCategory === "aroma" && (
               <CatalogBlock
                 category="Ароматы"
                 data={aroma}
-                onChange={() => filterOpen()}
+                onFilter={() => filterOpen()}
               />
             )}
             {pickedCategory === "special1" && (
               <CatalogBlock
                 category="Коллекция Сказки"
                 data={special1}
-                onChange={() => filterOpen()}
+                onFilter={() => filterOpen()}
               />
             )}
             {pickedCategory === "special2" && (
               <CatalogBlock
                 category="Коллекция Агиттекстиль"
                 data={special2}
-                onChange={() => filterOpen()}
+                onFilter={() => filterOpen()}
               />
             )}
             {pickedCategory === "special3" && (
               <CatalogBlock
                 category="Коллекция Узоры"
                 data={special3}
-                onChange={() => filterOpen()}
+                onFilter={() => filterOpen()}
               />
             )}
             {pickedCategory === "special4" && (
               <CatalogBlock
                 category="Коллекция Композиторы"
                 data={special4}
-                onChange={() => filterOpen()}
+                onFilter={() => filterOpen()}
               />
             )}
             {pickedCategory === "special5" && (
