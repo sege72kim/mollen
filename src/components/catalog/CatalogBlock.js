@@ -28,9 +28,11 @@ const CatalogBlock = ({ category, data, onChange }) => {
         <a className="path">Главная / Каталог / {category}</a>
         <h1>{category}</h1>
       </div>
-      <div className="open_filter_button" onClick={openFilter}>
-        <img src="/icons/filter.svg" alt="" />
-        <a>Фильтры</a>
+      <div className="open_filter_button" onClick={() => openFilter()}>
+        <div className={isChecked === true ? "filter_clicked" : ""}>
+          <img src="/icons/filter.svg" alt="" />
+          <a>Фильтры</a>
+        </div>
       </div>
       {category === "Постельное белье" && (
         <div className="second_category">
@@ -41,26 +43,24 @@ const CatalogBlock = ({ category, data, onChange }) => {
             >
               Комплекты
             </button>
-            <div>
-              <button
-                onClick={() => changeCategory2("bedding1")}
-                className={category2 === "bedding1" ? "category_active" : ""}
-              >
-                Наволочки
-              </button>
-              <button
-                onClick={() => changeCategory2("bedding2")}
-                className={category2 === "bedding2" ? "category_active" : ""}
-              >
-                Пододеяльники
-              </button>
-              <button
-                onClick={() => changeCategory2("bedding3")}
-                className={category2 === "bedding3" ? "category_active" : ""}
-              >
-                Простыни
-              </button>
-            </div>
+            <button
+              onClick={() => changeCategory2("bedding1")}
+              className={category2 === "bedding1" ? "category_active" : ""}
+            >
+              Наволочки
+            </button>
+            <button
+              onClick={() => changeCategory2("bedding2")}
+              className={category2 === "bedding2" ? "category_active" : ""}
+            >
+              Пододеяльники
+            </button>
+            <button
+              onClick={() => changeCategory2("bedding3")}
+              className={category2 === "bedding3" ? "category_active" : ""}
+            >
+              Простыни
+            </button>
           </div>
         </div>
       )}

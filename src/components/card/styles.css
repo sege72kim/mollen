@@ -48,7 +48,7 @@
   color: #1e1e1e;
   text-align: center;
   width: 80%;
-  height: 35px;
+  height: 30px;
 }
 .card h2 {
   margin: 0;
@@ -76,7 +76,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 30px;
+  margin-top: 20px;
   transition: all 0.3s ease;
 }
 .card button:hover {
@@ -84,9 +84,9 @@
   transform: scale(0.98);
 }
 @media (max-width: 1500px) {
-  /* .card button {
+  .card button {
     max-width: 180px;
     font-size: 14px;
     height: 50px;
-  } */
+  }
 }

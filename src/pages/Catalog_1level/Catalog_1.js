@@ -74,7 +74,7 @@ const Catalog_1 = () => {
       <Preloader />
       <header>
         <Navigation color="black" />
-        <div className={`header_catalog_1`}>
+        {/* <div className={`header_catalog_1`}>
           <h1>Новая коллекция</h1>
           <div>
             <p>
@@ -83,13 +83,14 @@ const Catalog_1 = () => {
             </p>
             <button>Перейти</button>
           </div>
-        </div>
+        </div> */}
       </header>
       <main className={`main_catalog`}>
         <AsideFilter
           pickedCategory={pickedCategory}
           changePickedCategory={changePickedCategory}
           filterStatus={filterStatus}
+          onChange={() => filterOpen()}
         />
         <section>
           <section>

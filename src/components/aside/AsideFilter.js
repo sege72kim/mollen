@@ -1,18 +1,24 @@
-import React from "react";
+import { React, useState } from "react";
 import "./styles.css";
 import Checkbox from "../checkbox/Checkbox";
 const AsideFilter = ({
   pickedCategory,
   changePickedCategory,
   filterStatus,
+  onChange,
 }) => {
+  const [isChecked, setIsChecked] = useState(false);
+  const openFilter = () => {
+    setIsChecked(!isChecked);
+    onChange(!isChecked);
+  };
   return (
     <aside className={`filter${filterStatus}`}>
+      <div className="mobile_filter_header">
+        <h1>Фильтры</h1>
+        <button onClick={openFilter}>+</button>
+      </div>
       <div className="aside_filter">
-        <div className="mobile_filter_header">
-          <h1>Фильтры</h1>
-          <button>+</button>
-        </div>
         <h1>Категории</h1>
         <Checkbox
           label="Постельное белье"
@@ -78,8 +84,10 @@ const AsideFilter = ({
           state={pickedCategory}
           category="special6"
         />
-        <button className="filter_button">Показать</button>
       </div>
+      <button className="filter_button" onClick={openFilter}>
+        <a>Показать</a>
+      </button>
     </aside>
   );
 };
