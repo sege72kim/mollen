@@ -1,10 +1,18 @@
 import React from "react";
 import "./styles.css";
 import Checkbox from "../checkbox/Checkbox";
-const AsideFilter = ({ pickedCategory, changePickedCategory }) => {
+const AsideFilter = ({
+  pickedCategory,
+  changePickedCategory,
+  filterStatus,
+}) => {
   return (
-    <aside className="filter">
+    <aside className={`filter${filterStatus}`}>
       <div className="aside_filter">
+        <div className="mobile_filter_header">
+          <h1>Фильтры</h1>
+          <button>+</button>
+        </div>
         <h1>Категории</h1>
         <Checkbox
           label="Постельное белье"
@@ -70,6 +78,7 @@ const AsideFilter = ({ pickedCategory, changePickedCategory }) => {
           state={pickedCategory}
           category="special6"
         />
+        <button className="filter_button">Показать</button>
       </div>
     </aside>
   );

@@ -2,7 +2,7 @@ import { React, useState } from "react";
 import "./styles.css";
 import Card from "../card/card";
 
-const CatalogBlock = ({ category, data }) => {
+const CatalogBlock = ({ category, data, onChange }) => {
   const [category2, setCategory2] = useState("bedding");
   const changeCategory2 = (currentCategory) => {
     setCategory2(currentCategory);
@@ -17,11 +17,20 @@ const CatalogBlock = ({ category, data }) => {
   const bedding2 = filterByCategory2("Пододеяльник");
   const bedding3 = filterByCategory2("Простыня");
 
+  const [isChecked, setIsChecked] = useState(false);
+  const openFilter = () => {
+    setIsChecked(!isChecked);
+    onChange(!isChecked);
+  };
   return (
     <div className="catalog_box">
       <div className="catalog_header">
         <a className="path">Главная / Каталог / {category}</a>
         <h1>{category}</h1>
+      </div>
+      <div className="open_filter_button" onClick={openFilter}>
+        <img src="/icons/filter.svg" alt="" />
+        <a>Фильтры</a>
       </div>
       {category === "Постельное белье" && (
         <div className="second_category">

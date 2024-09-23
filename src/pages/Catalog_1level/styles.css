@@ -1,3 +1,6 @@
+.main_catalog {
+  overflow: hidden;
+}
 .header_catalog_1 {
   position: relative;
   height: 530px;
@@ -56,4 +59,16 @@
 }
 .main_catalog > section {
   padding-top: 40px;
+}
+.mobile_filter {
+  display: none;
+}
+@media (max-width: 1000px) {
+  .desktop_filter {
+    display: none;
+  }
+  .mobile_filter {
+    display: flex;
+    flex-direction: column;
+  }
 }

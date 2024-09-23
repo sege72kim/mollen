@@ -2,7 +2,6 @@ import React from "react";
 import "./styles.css";
 
 const Card = ({ props }) => {
-  console.log(props);
   return (
     <div className="card">
       <div className="card_top">

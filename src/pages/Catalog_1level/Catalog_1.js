@@ -12,7 +12,7 @@ const Catalog_1 = () => {
   const dispatch = useDispatch();
   const { data, status, error } = useSelector((state) => state.data);
   const [pickedCategory, setPickedCategory] = useState("");
-
+  const [filterStatus, setFilterStatus] = useState("");
   useEffect(() => {
     if (status === "idle") {
       dispatch(fetchData());
@@ -62,7 +62,13 @@ const Catalog_1 = () => {
       setPickedCategory(currentCategory);
     }
   };
-
+  const filterOpen = () => {
+    if (filterStatus === "") {
+      setFilterStatus("open");
+    } else {
+      setFilterStatus("");
+    }
+  };
   return (
     <div className="catalog_1">
       <Preloader />
@@ -83,35 +89,72 @@ const Catalog_1 = () => {
         <AsideFilter
           pickedCategory={pickedCategory}
           changePickedCategory={changePickedCategory}
+          filterStatus={filterStatus}
         />
         <section>
           <section>
             {pickedCategory === "" && (
-              <CatalogBlock category="Популярные товары" data={products} />
+              <CatalogBlock
+                category="Популярные товары"
+                data={products}
+                onChange={() => filterOpen()}
+              />
             )}
             {pickedCategory === "bedding" && (
-              <CatalogBlock category="Постельное белье" data={bedding} />
+              <CatalogBlock
+                category="Постельное белье"
+                data={bedding}
+                onChange={() => filterOpen()}
+              />
             )}
             {pickedCategory === "clothes" && (
-              <CatalogBlock category="Одежда" data={clothes} />
+              <CatalogBlock
+                category="Одежда"
+                data={clothes}
+                onChange={() => filterOpen()}
+              />
             )}
             {pickedCategory === "accsessories" && (
-              <CatalogBlock category="Аксессуары" data={accessories} />
+              <CatalogBlock
+                category="Аксессуары"
+                data={accessories}
+                onChange={() => filterOpen()}
+              />
             )}
             {pickedCategory === "aroma" && (
-              <CatalogBlock category="Ароматы" data={aroma} />
+              <CatalogBlock
+                category="Ароматы"
+                data={aroma}
+                onChange={() => filterOpen()}
+              />
             )}
             {pickedCategory === "special1" && (
-              <CatalogBlock category="Коллекция Сказки" data={special1} />
+              <CatalogBlock
+                category="Коллекция Сказки"
+                data={special1}
+                onChange={() => filterOpen()}
+              />
             )}
             {pickedCategory === "special2" && (
-              <CatalogBlock category="Коллекция Агиттекстиль" data={special2} />
+              <CatalogBlock
+                category="Коллекция Агиттекстиль"
+                data={special2}
+                onChange={() => filterOpen()}
+              />
             )}
             {pickedCategory === "special3" && (
-              <CatalogBlock category="Коллекция Узоры" data={special3} />
+              <CatalogBlock
+                category="Коллекция Узоры"
+                data={special3}
+                onChange={() => filterOpen()}
+              />
             )}
             {pickedCategory === "special4" && (
-              <CatalogBlock category="Коллекция Композиторы" data={special4} />
+              <CatalogBlock
+                category="Коллекция Композиторы"
+                data={special4}
+                onChange={() => filterOpen()}
+              />
             )}
             {pickedCategory === "special5" && (
               <CatalogBlock
