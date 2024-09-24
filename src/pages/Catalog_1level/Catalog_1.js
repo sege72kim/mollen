@@ -99,6 +99,7 @@ const Catalog_1 = () => {
                 category="Популярные товары"
                 data={products}
                 onFilter={() => filterOpen()}
+                filterStatus={filterStatus}
               />
             )}
             {pickedCategory === "bedding" && (
@@ -106,6 +107,7 @@ const Catalog_1 = () => {
                 category="Постельное белье"
                 data={bedding}
                 onFilter={() => filterOpen()}
+                filterStatus={filterStatus}
               />
             )}
             {pickedCategory === "clothes" && (
@@ -113,6 +115,7 @@ const Catalog_1 = () => {
                 category="Одежда"
                 data={clothes}
                 onFilter={() => filterOpen()}
+                filterStatus={filterStatus}
               />
             )}
             {pickedCategory === "accsessories" && (
@@ -120,6 +123,7 @@ const Catalog_1 = () => {
                 category="Аксессуары"
                 data={accessories}
                 onFilter={() => filterOpen()}
+                filterStatus={filterStatus}
               />
             )}
             {pickedCategory === "aroma" && (
@@ -127,6 +131,7 @@ const Catalog_1 = () => {
                 category="Ароматы"
                 data={aroma}
                 onFilter={() => filterOpen()}
+                filterStatus={filterStatus}
               />
             )}
             {pickedCategory === "special1" && (
@@ -134,6 +139,7 @@ const Catalog_1 = () => {
                 category="Коллекция Сказки"
                 data={special1}
                 onFilter={() => filterOpen()}
+                filterStatus={filterStatus}
               />
             )}
             {pickedCategory === "special2" && (
@@ -141,6 +147,7 @@ const Catalog_1 = () => {
                 category="Коллекция Агиттекстиль"
                 data={special2}
                 onFilter={() => filterOpen()}
+                filterStatus={filterStatus}
               />
             )}
             {pickedCategory === "special3" && (
@@ -148,6 +155,7 @@ const Catalog_1 = () => {
                 category="Коллекция Узоры"
                 data={special3}
                 onFilter={() => filterOpen()}
+                filterStatus={filterStatus}
               />
             )}
             {pickedCategory === "special4" && (
@@ -155,16 +163,24 @@ const Catalog_1 = () => {
                 category="Коллекция Композиторы"
                 data={special4}
                 onFilter={() => filterOpen()}
+                filterStatus={filterStatus}
               />
             )}
             {pickedCategory === "special5" && (
               <CatalogBlock
                 category="Коллекция Санкт-Петербург"
                 data={special5}
+                filterStatus={filterStatus}
+                onFilter={() => filterOpen()}
               />
             )}
             {pickedCategory === "special6" && (
-              <CatalogBlock category="Коллекция Степи" data={special6} />
+              <CatalogBlock
+                category="Коллекция Степи"
+                data={special6}
+                onFilter={() => filterOpen()}
+                filterStatus={filterStatus}
+              />
             )}
           </section>
         </section>

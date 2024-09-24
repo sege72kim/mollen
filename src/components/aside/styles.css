@@ -1,6 +1,6 @@
 .filter,
 .filteropen {
-  width: 30%;
+  width: 35%;
   max-width: 360px;
   min-width: 250px;
   padding-right: 40px;
@@ -30,7 +30,7 @@
 .aside_filter {
   padding-left: 40px;
 }
-@media (max-width: 1000px) {
+@media (max-width: 1200px) {
   .aside_filter {
     padding-left: 16px;
   }
@@ -93,7 +93,7 @@
     transform: rotate(45deg);
   }
 }
-@media (max-width: 800px) {
+@media (max-width: 600px) {
   .filter,
   .filteropen {
     width: 100vw;
