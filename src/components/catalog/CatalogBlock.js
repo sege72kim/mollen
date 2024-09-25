@@ -4,8 +4,14 @@ import Card from "../card/card";
 
 const CatalogBlock = ({ category, data, onFilter, filterStatus }) => {
   const [category2, setCategory2] = useState("bedding");
+  const [category3, setCategory3] = useState("clothes");
+  const [isChecked, setIsChecked] = useState(false);
+
   const changeCategory2 = (currentCategory) => {
     setCategory2(currentCategory);
+  };
+  const changeCategory3 = (currentCategory) => {
+    setCategory3(currentCategory);
   };
   const filterByCategory2 = (category) => {
     return data.flatMap(
@@ -13,15 +19,21 @@ const CatalogBlock = ({ category, data, onFilter, filterStatus }) => {
         product.complect?.filter((item) => item.category === category) || []
     );
   };
-  const bedding1 = filterByCategory2("Наволочка");
-  const bedding2 = filterByCategory2("Пододеяльник");
-  const bedding3 = filterByCategory2("Простыня");
-
-  const [isChecked, setIsChecked] = useState(false);
   const openFilter = () => {
     setIsChecked(!isChecked);
     onFilter(!isChecked);
   };
+
+  const bedding1 = filterByCategory2("Наволочка");
+  const bedding2 = filterByCategory2("Пододеяльник");
+  const bedding3 = filterByCategory2("Простыня");
+  const shirts = data.filter((product) => product.name.includes("Рубашка"));
+  const tops = data.filter((product) => product.name.includes("Топ"));
+  const dress = data.filter(
+    (product) =>
+      product.name.includes("платье") || product.name.includes("халат")
+  );
+
   return (
     <div className="catalog_box">
       <div className="catalog_header">
@@ -60,6 +72,36 @@ const CatalogBlock = ({ category, data, onFilter, filterStatus }) => {
               className={category2 === "bedding3" ? "category_active" : ""}
             >
               Простыни
+            </button>
+          </div>
+        </div>
+      )}
+      {category === "Одежда" && (
+        <div className="second_category">
+          <div>
+            <button
+              onClick={() => changeCategory3("clothes")}
+              className={category3 === "clothes" ? "category_active" : ""}
+            >
+              Одежда
+            </button>
+            <button
+              onClick={() => changeCategory3("clothes1")}
+              className={category3 === "clothes1" ? "category_active" : ""}
+            >
+              Рубашки
+            </button>
+            <button
+              onClick={() => changeCategory3("clothes2")}
+              className={category3 === "clothes2" ? "category_active" : ""}
+            >
+              Топы
+            </button>
+            <button
+              onClick={() => changeCategory3("clothes3")}
+              className={category3 === "clothes3" ? "category_active" : ""}
+            >
+              Платья
             </button>
           </div>
         </div>
@@ -104,7 +146,47 @@ const CatalogBlock = ({ category, data, onFilter, filterStatus }) => {
           )}
         </div>
       )}
-      {category !== "Постельное белье" && (
+      {category === "Одежда" && (
+        <div>
+          {category3 === "clothes" && (
+            <div className="catalog_list">
+              <div>
+                {data.map((item) => (
+                  <Card props={item} />
+                ))}
+              </div>
+            </div>
+          )}
+          {category3 === "clothes1" && (
+            <div className="catalog_list">
+              <div>
+                {shirts.map((item) => (
+                  <Card props={item} />
+                ))}
+              </div>
+            </div>
+          )}
+          {category3 === "clothes2" && (
+            <div className="catalog_list">
+              <div>
+                {tops.map((item) => (
+                  <Card props={item} />
+                ))}
+              </div>
+            </div>
+          )}
+          {category3 === "clothes3" && (
+            <div className="catalog_list">
+              <div>
+                {dress.map((item) => (
+                  <Card props={item} />
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+      )}
+      {category !== "Постельное белье" && category !== "Одежда" && (
         <div className="catalog_list">
           <div>
             {data.map((item) => (

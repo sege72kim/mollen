@@ -19,7 +19,11 @@ const Card = ({ props }) => {
       <div className="card_top">
         <p>{props.category}</p>
       </div>
-      <img className="card_img" src="./products/product1.webp" alt="product" />
+      <img
+        className="card_img"
+        src={`./products/${props.photo}.webp`}
+        alt="product"
+      />
       <h1>{props.name}</h1>
       {props.color === "special" && (
         <img src="./icons/mollen.svg" alt="" className="card_color" />
