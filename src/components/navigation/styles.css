@@ -9,6 +9,10 @@ nav {
   font-weight: 400;
   text-transform: uppercase;
 }
+.logo_picture {
+  display: flex;
+  justify-content: center;
+}
 .logo {
   margin-left: 40px;
   display: flex;
@@ -49,12 +53,12 @@ nav {
   background-color: white;
 }
 
-.navigation-black .logo_picture {
+.navigation-black .logo_picture img {
   filter: brightness(0) invert(0);
   cursor: pointer;
 }
 
-.navigation-white .logo_picture {
+.navigation-white .logo_picture img {
   filter: brightness(0) invert(1);
   cursor: pointer;
 }

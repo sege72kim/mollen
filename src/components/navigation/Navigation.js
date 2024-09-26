@@ -1,5 +1,6 @@
 import React from "react";
 import "./styles.css";
+import { Link } from "react-router-dom";
 
 const Navigation = (props) => {
   const colorClass =
@@ -14,8 +15,12 @@ const Navigation = (props) => {
           <div />
           <div />
         </div>
-        <img className="logo_picture" src="./images/logo1.svg" />
-        <div className="text_button">каталог</div>
+        <Link className="logo_picture" to="/">
+          <img src="./images/logo1.svg" />
+        </Link>
+        <Link to="/catalog">
+          <div className="text_button">каталог</div>
+        </Link>
       </div>
       <ul>
         <li className={`nav_button-${colorButton}`}>

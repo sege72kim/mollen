@@ -1,5 +1,6 @@
 import React from "react";
 import "./styles.css";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -14,10 +15,26 @@ const Footer = () => {
         </div>
         <div className="footer_list_container">
           <ul className="footer_list">
-            <li>Постельное белье</li>
-            <li>Одежда</li>
-            <li>Ароматы</li>
-            <li>Аксессуары</li>
+            <li>
+              <Link to="/catalog" state={{ category: "bedding" }}>
+                Постельное белье
+              </Link>
+            </li>
+            <li>
+              <Link to="/catalog" state={{ category: "clothes" }}>
+                Одежда
+              </Link>
+            </li>
+            <li>
+              <Link to="/catalog" state={{ category: "accsessories" }}>
+                Аксессуары
+              </Link>
+            </li>
+            <li>
+              <Link to="/catalog" state={{ category: "aroma" }}>
+                Ароматы
+              </Link>
+            </li>
           </ul>
 
           <ul className="footer_list">

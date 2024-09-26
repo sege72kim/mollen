@@ -1,17 +1,19 @@
 import React, { useState, useEffect } from "react";
 import "./styles.css";
-import Preloader from "../../components/preloader/Preloader";
-import Navigation from "../../components/navigation/Navigation";
-import Footer from "../../components/footer/Footer";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchData } from "../../redux/productSlice";
 import AsideFilter from "../../components/aside/AsideFilter";
 import CatalogBlock from "../../components/catalog/CatalogBlock";
+import { useLocation } from "react-router-dom";
 
 const Catalog_1 = () => {
+  const location = useLocation();
+
   const dispatch = useDispatch();
   const { data, status, error } = useSelector((state) => state.data);
-  const [pickedCategory, setPickedCategory] = useState("");
+  const [pickedCategory, setPickedCategory] = useState(
+    location.state?.category || ""
+  );
   const [filterStatus, setFilterStatus] = useState("");
   useEffect(() => {
     if (status === "idle") {
@@ -71,20 +73,6 @@ const Catalog_1 = () => {
   };
   return (
     <div className="catalog_1">
-      <Preloader />
-      <header>
-        <Navigation color="black" />
-        {/* <div className={`header_catalog_1`}>
-          <h1>Новая коллекция</h1>
-          <div>
-            <p>
-              У каждого принта "Моллен" есть своя история, которую мы вам сейчас
-              и расскажем.
-            </p>
-            <button>Перейти</button>
-          </div>
-        </div> */}
-      </header>
       <main className={`main_catalog`}>
         <AsideFilter
           pickedCategory={pickedCategory}
@@ -185,7 +173,6 @@ const Catalog_1 = () => {
           </section>
         </section>
       </main>
-      <Footer />
     </div>
   );
 };

@@ -37,7 +37,9 @@ const CatalogBlock = ({ category, data, onFilter, filterStatus }) => {
   return (
     <div className="catalog_box">
       <div className="catalog_header">
-        <a className="path">Главная / Каталог / {category}</a>
+        <a className="path">
+          <span>Главная </span> / <span>Каталог</span> / <span>{category}</span>
+        </a>
         <h1>{category}</h1>
       </div>
       <div className="open_filter_button" onClick={() => openFilter()}>

@@ -1,43 +1,9 @@
 import React from "react";
 import "./styles.css";
-import Navigation from "../../components/navigation/Navigation";
-import Footer from "../../components/footer/Footer";
-import Preloader from "../../components/preloader/Preloader";
+import { Link } from "react-router-dom";
 const MainPage = () => {
   return (
     <div>
-      <Preloader />
-      <header className="main_header">
-        <div className="main_header_back" />
-        <Navigation color="white" />
-        <div className="main_header_content">
-          <div>
-            <div className="main_header_dot">
-              <div />
-            </div>
-            <div className="main_header_dot_text">Ароматы</div>
-          </div>
-          <div>
-            <div className="main_header_dot">
-              <div />
-            </div>
-            <div className="main_header_dot_text">Постельное белье</div>
-          </div>
-          <div>
-            <div className="main_header_dot">
-              <div />
-            </div>
-            <div className="main_header_dot_text">Акссесуары</div>
-          </div>
-          <div>
-            <div className="main_header_dot">
-              <div />
-            </div>
-            <div className="main_header_dot_text">Одежда</div>
-          </div>
-          <img className="main_header_logo" src="./icons/logo.svg" />
-        </div>
-      </header>
       <main>
         <section className="main_section_1">
           <h1>Навигатор по коллекции</h1>
@@ -122,7 +88,9 @@ const MainPage = () => {
                 Русская классическая музыка — неиссякаемый источник вдохновения
                 для каждого.
               </p>
-              <button>Подробнее</button>
+              <Link to="/catalog" state={{ category: "special4" }}>
+                <button>Подробнее</button>
+              </Link>
             </div>
             <video autoPlay loop muted width="600">
               <source src="/videos/special_1.mp4" type="video/mp4" />
@@ -143,7 +111,9 @@ const MainPage = () => {
                 Маленькая птичка Кузябочка то появляется, то прячется в
                 хитросплетениях узоров ткани.
               </p>
-              <button>Подробнее</button>
+              <Link to="/catalog" state={{ category: "special1" }}>
+                <button>Подробнее</button>
+              </Link>
             </div>
           </div>
           <div className="main_special">
@@ -159,7 +129,9 @@ const MainPage = () => {
                 участием разных персонажей —главные приметы этого удивительного
                 стиля.
               </p>
-              <button>Подробнее</button>
+              <Link to="/catalog" state={{ category: "special2" }}>
+                <button>Подробнее</button>
+              </Link>
             </div>
             <video autoPlay loop muted width="600" playsInline>
               <source src="/videos/special_3.mp4" type="video/mp4" />
@@ -174,21 +146,37 @@ const MainPage = () => {
               <ul>
                 <li>
                   <div />
-                  <p>Постельное</p>
+                  <p>
+                    <Link to="/catalog" state={{ category: "bedding" }}>
+                      Постельное
+                    </Link>
+                  </p>
                 </li>
                 <li>
                   <div />
-                  <p>Аксессуары</p>
+                  <p>
+                    <Link to="/catalog" state={{ category: "accsessories" }}>
+                      Аксессуары
+                    </Link>
+                  </p>
                 </li>
               </ul>
               <ul>
                 <li>
                   <div />
-                  <p>Одежда</p>
+                  <p>
+                    <Link to="/catalog" state={{ category: "clothes" }}>
+                      Одежда
+                    </Link>
+                  </p>
                 </li>
                 <li>
                   <div />
-                  <p>Ароматы</p>
+                  <p>
+                    <Link to="/catalog" state={{ category: "aroma" }}>
+                      Ароматы
+                    </Link>
+                  </p>
                 </li>
               </ul>
             </div>
@@ -212,7 +200,6 @@ const MainPage = () => {
           </div>
         </section>
         <section className="main_section_1">
-          {" "}
           <h1>Мы в соцсетях</h1>
           <div>
             <div className="main_section_1_block">
@@ -238,7 +225,6 @@ const MainPage = () => {
           </div>
         </section>
       </main>
-      <Footer />
     </div>
   );
 };

@@ -2,7 +2,13 @@
   font-size: 14px;
   font-weight: 300;
 }
-
+.path span {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.path span:hover {
+  color: #4e76c6;
+}
 .catalog_header h1 {
   font-weight: 500;
   font-size: 40px;
