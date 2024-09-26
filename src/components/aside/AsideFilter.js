@@ -47,7 +47,7 @@ const AsideFilter = ({
         />
       </div>
       <div className="aside_filter">
-        <h1>Коллекция</h1>
+        <h1>Коллекция принтов</h1>
         <Checkbox
           label="Коллекция Сказки"
           onChange={() => changePickedCategory("special1")}

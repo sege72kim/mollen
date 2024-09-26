@@ -21,7 +21,7 @@ const Checkbox = ({ label, onChange, state, category }) => {
         onChange={handleCheckboxChange}
       />
       <span className={`custom-checkbox ${isChecked ? "checked" : ""}`}></span>
-      {label}
+      <a>{label}</a>
     </label>
   );
 };
