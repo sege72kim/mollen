@@ -1,6 +1,7 @@
 import { React, useState } from "react";
 import "./styles.css";
 import Card from "../card/card";
+import { Link } from "react-router-dom";
 
 const CatalogBlock = ({ category, data, onFilter, filterStatus }) => {
   const [category2, setCategory2] = useState("bedding");
@@ -38,7 +39,10 @@ const CatalogBlock = ({ category, data, onFilter, filterStatus }) => {
     <div className="catalog_box">
       <div className="catalog_header">
         <a className="path">
-          <span>Главная </span> / <span>Каталог</span> / <span>{category}</span>
+          <span>
+            <Link to="/">Главная </Link>
+          </span>
+          / <span>Каталог</span> / <span>{category}</span>
         </a>
         <h1>{category}</h1>
       </div>
@@ -114,7 +118,9 @@ const CatalogBlock = ({ category, data, onFilter, filterStatus }) => {
             <div className="catalog_list">
               <div>
                 {data.map((item) => (
-                  <Card props={item} />
+                  <Link key={item.id} to={`/product/${item.id}`}>
+                    <Card props={item} />
+                  </Link>
                 ))}
               </div>
             </div>
@@ -123,7 +129,9 @@ const CatalogBlock = ({ category, data, onFilter, filterStatus }) => {
             <div className="catalog_list">
               <div>
                 {bedding1.map((item) => (
-                  <Card props={item} />
+                  <Link key={item.id} to={`/product/${item.id}`}>
+                    <Card props={item} />
+                  </Link>
                 ))}
               </div>
             </div>
@@ -132,7 +140,9 @@ const CatalogBlock = ({ category, data, onFilter, filterStatus }) => {
             <div className="catalog_list">
               <div>
                 {bedding2.map((item) => (
-                  <Card props={item} />
+                  <Link key={item.id} to={`/product/${item.id}`}>
+                    <Card props={item} />
+                  </Link>
                 ))}
               </div>
             </div>
@@ -141,7 +151,9 @@ const CatalogBlock = ({ category, data, onFilter, filterStatus }) => {
             <div className="catalog_list">
               <div>
                 {bedding3.map((item) => (
-                  <Card props={item} />
+                  <Link key={item.id} to={`/product/${item.id}`}>
+                    <Card props={item} />
+                  </Link>
                 ))}
               </div>
             </div>
@@ -154,7 +166,9 @@ const CatalogBlock = ({ category, data, onFilter, filterStatus }) => {
             <div className="catalog_list">
               <div>
                 {data.map((item) => (
-                  <Card props={item} />
+                  <Link key={item.id} to={`/product/${item.id}`}>
+                    <Card props={item} />
+                  </Link>
                 ))}
               </div>
             </div>
@@ -163,7 +177,9 @@ const CatalogBlock = ({ category, data, onFilter, filterStatus }) => {
             <div className="catalog_list">
               <div>
                 {shirts.map((item) => (
-                  <Card props={item} />
+                  <Link key={item.id} to={`/product/${item.id}`}>
+                    <Card props={item} />
+                  </Link>
                 ))}
               </div>
             </div>
@@ -172,7 +188,9 @@ const CatalogBlock = ({ category, data, onFilter, filterStatus }) => {
             <div className="catalog_list">
               <div>
                 {tops.map((item) => (
-                  <Card props={item} />
+                  <Link key={item.id} to={`/product/${item.id}`}>
+                    <Card props={item} />
+                  </Link>
                 ))}
               </div>
             </div>
@@ -181,7 +199,9 @@ const CatalogBlock = ({ category, data, onFilter, filterStatus }) => {
             <div className="catalog_list">
               <div>
                 {dress.map((item) => (
-                  <Card props={item} />
+                  <Link key={item.id} to={`/product/${item.id}`}>
+                    <Card props={item} />
+                  </Link>
                 ))}
               </div>
             </div>
@@ -192,7 +212,9 @@ const CatalogBlock = ({ category, data, onFilter, filterStatus }) => {
         <div className="catalog_list">
           <div>
             {data.map((item) => (
-              <Card props={item} />
+              <Link key={item.id} to={`/product/${item.id}`}>
+                <Card props={item} />
+              </Link>
             ))}
           </div>
         </div>

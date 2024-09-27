@@ -4,6 +4,7 @@ import LayoutMainPage from "../layouts/LayoutMainPage";
 import MainPage from "../pages/MainPage/MainPage";
 import LayoutDefault from "../layouts/LayoutDefault";
 import Catalog_1 from "../pages/Catalog_1level/Catalog_1";
+import ProductPage from "../pages/ProductPage/ProductPage";
 
 const AppRoutes = () => {
   return (
@@ -14,6 +15,7 @@ const AppRoutes = () => {
         </Route>
         <Route path="/" element={<LayoutDefault />}>
           <Route path="catalog" element={<Catalog_1 />} />
+          <Route path="product/:id" element={<ProductPage />} />
         </Route>
       </Routes>
     </>

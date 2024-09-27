@@ -7,7 +7,7 @@ const Footer = () => {
     <footer>
       <div className="footer_container">
         <div className="footer_start_container">
-          <img alt="" src="logo1.svg" />
+          <img alt="" src="/images/logo1.svg" />
           <div>
             <p>20212021 © Mollen </p>
             <p>Все права защищены</p>

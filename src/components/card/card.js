@@ -26,7 +26,7 @@ const Card = ({ props }) => {
       />
       <h1>{props.name}</h1>
       {props.color === "special" && (
-        <img src="./icons/mollen.svg" alt="" className="card_color" />
+        <img src="/icons/mollen.svg" alt="" className="card_color" />
       )}
       {props.color !== "special" && (
         <div style={{ backgroundColor: color }} className="card_color" />

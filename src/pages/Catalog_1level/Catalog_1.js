@@ -30,17 +30,13 @@ const Catalog_1 = () => {
   }
 
   const filterByCategory = (category) => {
-    return data.flatMap((product) =>
-      product.filter(
-        (item) => item.category === category && item.special === "none"
-      )
+    return data.filter(
+      (item) => item.category === category && item.special === "none"
     );
   };
 
   const filterBySpecial = (special) => {
-    return data.flatMap((product) =>
-      product.filter((item) => item.special === special)
-    );
+    return data.filter((item) => item.special === special);
   };
 
   const products = Object.values(data).flat();

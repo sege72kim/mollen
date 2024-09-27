@@ -7,6 +7,7 @@ export const products = [
     photo: "complect1",
     complect: [
       {
+        id: 101,
         name: "Наволочка 'Жемчужно-белый'",
         category: "Наволочка",
         photo: "bedding11",
@@ -15,6 +16,7 @@ export const products = [
         special: "none",
       },
       {
+        id: 102,
         name: "Пододеяльник 'Жемчужно-белый'",
         category: "Пододеяльник",
         photo: "bedding21",
@@ -23,6 +25,7 @@ export const products = [
         special: "none",
       },
       {
+        id: 103,
         name: "Простыня 'Жемчужно-белый'",
         category: "Простыня",
         photo: "bedding31",
@@ -42,6 +45,7 @@ export const products = [
     photo: "complect2",
     complect: [
       {
+        id: 104,
         name: "Наволочка 'Графитно-серый'",
         category: "Наволочка",
         photo: "bedding12",
@@ -50,6 +54,7 @@ export const products = [
         special: "none",
       },
       {
+        id: 105,
         name: "Пододеяльник 'Графитно-серый'",
         category: "Пододеяльник",
         photo: "bedding22",
@@ -58,6 +63,7 @@ export const products = [
         special: "none",
       },
       {
+        id: 106,
         name: "Простыня 'Графитно-серый'",
         category: "Простыня",
         photo: "bedding32",
@@ -77,6 +83,7 @@ export const products = [
     photo: "complect3",
     complect: [
       {
+        id: 107,
         name: "Наволочка 'Пудрово-бежевый'",
         category: "Наволочка",
         photo: "bedding13",
@@ -85,6 +92,7 @@ export const products = [
         special: "none",
       },
       {
+        id: 108,
         name: "Пододеяльник 'Пудрово-бежевый'",
         category: "Пододеяльник",
         photo: "bedding23",
@@ -93,6 +101,7 @@ export const products = [
         special: "none",
       },
       {
+        id: 109,
         name: "Простыня 'Пудрово-бежевый'",
         category: "Простыня",
         photo: "bedding33",
@@ -112,6 +121,7 @@ export const products = [
     photo: "complect4",
     complect: [
       {
+        id: 110,
         name: "Наволочка 'Васильково-синий'",
         category: "Наволочка",
         photo: "bedding14",
@@ -120,6 +130,7 @@ export const products = [
         special: "none",
       },
       {
+        id: 111,
         name: "Пододеяльник 'Васильково-синий'",
         category: "Пододеяльник",
         photo: "bedding24",
@@ -128,6 +139,7 @@ export const products = [
         special: "none",
       },
       {
+        id: 112,
         name: "Простыня 'Васильково-синий'",
         category: "Простыня",
         photo: "bedding34",
@@ -147,6 +159,7 @@ export const products = [
     photo: "complect5",
     complect: [
       {
+        id: 113,
         name: "Наволочка 'Вишнево-Ягодный'",
         category: "Наволочка",
         photo: "bedding15",
@@ -155,6 +168,7 @@ export const products = [
         special: "none",
       },
       {
+        id: 114,
         name: "Пододеяльник 'Вишнево-Ягодный'",
         category: "Пододеяльник",
         photo: "bedding25",
@@ -163,6 +177,7 @@ export const products = [
         special: "none",
       },
       {
+        id: 115,
         name: "Простыня 'Вишнево-Ягодный'",
         category: "Простыня",
         photo: "bedding35",

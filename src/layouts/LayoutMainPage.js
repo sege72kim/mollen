@@ -67,7 +67,7 @@ const LayoutMainPage = () => {
               </Link>
             </div>
           </div>
-          <img className="main_header_logo" src="./icons/logo.svg" />
+          <img className="main_header_logo" src="/icons/logo.svg" />
         </div>
       </header>
       <Outlet />

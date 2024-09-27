@@ -198,7 +198,7 @@ const MainPage = () => {
             </div>
           </div>
           <div>
-            <img src="./icons/logo.svg" />
+            <img src="/icons/logo.svg" />
           </div>
         </section>
         <section className="main_section_1">
