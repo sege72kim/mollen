@@ -23,6 +23,7 @@ const ProductPage = () => {
   }
   return (
     <div className="product_page">
+      <h1>{id}</h1>
       {product && (
         <main>
           <div className="product_photo">

@@ -14,20 +14,16 @@ const CatalogBlock = ({ category, data, onFilter, filterStatus }) => {
   const changeCategory3 = (currentCategory) => {
     setCategory3(currentCategory);
   };
-  const filterByCategory2 = (category) => {
-    return data.flatMap(
-      (product) =>
-        product.complect?.filter((item) => item.category === category) || []
-    );
-  };
   const openFilter = () => {
     setIsChecked(!isChecked);
     onFilter(!isChecked);
   };
-
-  const bedding1 = filterByCategory2("Наволочка");
-  const bedding2 = filterByCategory2("Пододеяльник");
-  const bedding3 = filterByCategory2("Простыня");
+  const bedding = data.filter((product) => product.category === "Белье");
+  const bedding1 = data.filter((product) => product.category === "Наволочка");
+  const bedding2 = data.filter(
+    (product) => product.category === "Пододеяльник"
+  );
+  const bedding3 = data.filter((product) => product.category === "Простыня");
   const shirts = data.filter((product) => product.name.includes("Рубашка"));
   const tops = data.filter((product) => product.name.includes("Топ"));
   const dress = data.filter(
@@ -117,7 +113,7 @@ const CatalogBlock = ({ category, data, onFilter, filterStatus }) => {
           {category2 === "bedding" && (
             <div className="catalog_list">
               <div>
-                {data.map((item) => (
+                {bedding.map((item) => (
                   <Link key={item.id} to={`/product/${item.id}`}>
                     <Card props={item} />
                   </Link>

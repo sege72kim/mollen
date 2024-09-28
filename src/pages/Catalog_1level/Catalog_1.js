@@ -41,7 +41,12 @@ const Catalog_1 = () => {
 
   const products = Object.values(data).flat();
 
-  const bedding = filterByCategory("Белье");
+  const bedding = [
+    ...filterByCategory("Белье"),
+    ...filterByCategory("Наволочка"),
+    ...filterByCategory("Пододеяльник"),
+    ...filterByCategory("Простыня"),
+  ];
   const clothes = filterByCategory("Одежда");
   const accessories = filterByCategory("Аксессуары");
   const aroma = filterByCategory("Ароматы");

@@ -5,10 +5,12 @@ import MainPage from "../pages/MainPage/MainPage";
 import LayoutDefault from "../layouts/LayoutDefault";
 import Catalog_1 from "../pages/Catalog_1level/Catalog_1";
 import ProductPage from "../pages/ProductPage/ProductPage";
+import ScrollToTop from "../utils/scrollToTop";
 
 const AppRoutes = () => {
   return (
     <>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<LayoutMainPage />}>
           <Route index element={<MainPage />} />
