@@ -31,7 +31,7 @@ const Card = ({ props }) => {
       {props.color !== "special" && (
         <div style={{ backgroundColor: color }} className="card_color" />
       )}
-      <h3>{props.price}₽</h3>
+      <h3>{props.price} ₽</h3>
       <button>В Корзину</button>
     </div>
   );
