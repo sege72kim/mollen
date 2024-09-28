@@ -1,4 +1,8 @@
 nav {
+  border-bottom: 1px solid #eceae7;
+  z-index: 3;
+}
+nav > div {
   height: 72px;
   position: relative;
   z-index: 3;
@@ -8,6 +12,8 @@ nav {
   font-size: 14px;
   font-weight: 400;
   text-transform: uppercase;
+  max-width: 1800px;
+  margin: 0 auto;
 }
 .logo_picture {
   display: flex;

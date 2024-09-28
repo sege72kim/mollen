@@ -1,0 +1,12 @@
+.product_page main {
+  display: flex;
+  margin-top: 60px;
+}
+.product_photo img {
+  width: 100%;
+}
+.product_photo {
+  padding: 1px;
+  width: 50%;
+  background-color: aqua;
+}

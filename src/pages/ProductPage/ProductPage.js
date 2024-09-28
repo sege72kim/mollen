@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchDataByID } from "../../redux/productSlice";
-
+import "./styles.css";
 const ProductPage = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
@@ -21,15 +21,20 @@ const ProductPage = () => {
   if (productStatus === "failed") {
     return <p>Error: {error}</p>;
   }
-
   return (
-    <div>
-      <h1>Product {id}</h1>
+    <div className="product_page">
       {product && (
-        <div>
-          <h2>{product.name}</h2>
-          <p>{product.price}</p>
-        </div>
+        <main>
+          <div className="product_photo">
+            <img alt="" src={`/products/${product.photo}_1.webp`} />
+          </div>
+          <div className="product_description">
+            <div className="path">
+              <span>Главная</span> / <span>Каталог</span> /{" "}
+              <span>{product.category}</span> / <span>{product.name}</span>
+            </div>
+          </div>
+        </main>
       )}
     </div>
   );
