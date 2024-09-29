@@ -5,7 +5,7 @@ export const products = [
     name: "Комплект 'Жемчужно-белый'",
     category: "Белье",
     photo: "complect1",
-    complect: [],
+    complect: [6, 11],
     color: "Белый",
     price: 25000,
     special: "none",
