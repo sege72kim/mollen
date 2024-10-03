@@ -8,6 +8,7 @@ import {
 import "./styles.css";
 import Card from "../../components/card/card";
 import Modal from "../../components/modal/Modal";
+import { addToCart } from "../../redux/cartSlice";
 
 const ProductPage = () => {
   const { id } = useParams();
@@ -17,7 +18,11 @@ const ProductPage = () => {
   const { product, productStatus, error } = useSelector((state) => state.data);
   const { complectItems } = useSelector((state) => state.data);
   const [modalActive, setModalActive] = useState(false);
-
+  const cartItems = useSelector((state) => state.cart);
+  const handleAddToCart = () => {
+    dispatch(addToCart(product));
+    console.log(cartItems);
+  };
   useEffect(() => {
     const fetchProductData = async () => {
       await dispatch(fetchDataByID(id));
@@ -75,6 +80,10 @@ const ProductPage = () => {
       {product && (
         <main>
           <section>
+            <div className="path_mobile">
+              <span>Главная</span> / <span>Каталог</span> /{" "}
+              <span>{product.category}</span> / <span>{product.name}</span>
+            </div>
             <div className="product_photo">
               <img
                 alt=""
@@ -124,7 +133,14 @@ const ProductPage = () => {
                 </table>
               )}
 
-              <button className="add_product">в корзину</button>
+              <button
+                className="add_product"
+                onClick={() => {
+                  handleAddToCart();
+                }}
+              >
+                в корзину
+              </button>
             </div>
           </section>
           <section>

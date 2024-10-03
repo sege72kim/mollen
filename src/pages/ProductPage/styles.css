@@ -1,3 +1,16 @@
+.path_mobile {
+  font-size: 14px;
+  font-weight: 300;
+  display: none;
+}
+.path_mobile span {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.path_mobile span:hover {
+  color: #4e76c6;
+}
+
 .product_page {
   max-width: 1600px;
   margin: 0 auto;
@@ -9,8 +22,9 @@
 .product_page main section:nth-child(1) {
   display: flex;
 }
-.product_photo img {
+.product_photo > img {
   width: 100%;
+  min-height: 570px;
   aspect-ratio: 3/2;
   object-fit: cover;
   object-position: center;
@@ -65,7 +79,6 @@
   font-family: "Circe";
   margin-top: 30px;
 }
-
 .product_table tr {
   border-bottom: 1px solid #eceae7;
 }
@@ -81,7 +94,6 @@
   font-size: 20px;
   font-family: "Circe";
   line-height: 140%;
-
   transition: all 0.3s ease;
 }
 .pick_about button:hover {
@@ -145,4 +157,75 @@
 }
 .modal_picture img {
   height: 100%;
+}
+@media (max-width: 1200px) {
+  .product_page main section:nth-child(1) {
+    flex-direction: column;
+  }
+  .product_photo {
+    width: 100%;
+  }
+  .product_description {
+    margin-left: 0px;
+    width: 100%;
+  }
+  .path {
+    display: none;
+  }
+  .path_mobile {
+    display: block;
+    margin-bottom: 20px;
+  }
+  .product_page main {
+    margin-top: 30px;
+  }
+  .add_product {
+    width: 70%;
+    max-width: 500px;
+  }
+  .product_photo > img {
+    width: 100%;
+    min-height: 300px;
+    aspect-ratio: 3/2;
+    object-fit: cover;
+    object-position: center;
+    cursor: pointer;
+  }
+  .pick_about {
+    width: 80%;
+  }
+}
+@media (max-width: 800px) {
+  .product_name {
+    font-size: 20px;
+  }
+  .product_price {
+    font-size: 35px;
+  }
+
+  .pick_about button {
+    font-size: 16px;
+  }
+  .pick_about {
+    width: 100%;
+    column-gap: 10px;
+    justify-content: space-between;
+  }
+  .product_about {
+    width: 100%;
+  }
+  .add_product {
+    width: 60%;
+    min-width: 300px;
+  }
+  .product_table {
+    width: 60%;
+    min-width: 300px;
+  }
+  .complect_cards {
+    grid-template-columns: 1fr 1fr;
+  }
+  .complect_container > h1 {
+    font-size: 25px;
+  }
 }
