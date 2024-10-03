@@ -42,13 +42,13 @@ const LayoutMainPage = () => {
           <div>
             <Link
               to="/catalog"
-              state={{ category: "accsessories" }}
+              state={{ category: "acсessories" }}
               className="main_header_dot"
             >
               <div />
             </Link>
             <div className="main_header_dot_text">
-              <Link to="/catalog" state={{ category: "accsessories" }}>
+              <Link to="/catalog" state={{ category: "acсessories" }}>
                 Акссесуары
               </Link>
             </div>

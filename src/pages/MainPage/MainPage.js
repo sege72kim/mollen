@@ -157,7 +157,7 @@ const MainPage = () => {
                 <li>
                   <div />
                   <p>
-                    <Link to="/catalog" state={{ category: "accsessories" }}>
+                    <Link to="/catalog" state={{ category: "acсessories" }}>
                       Аксессуары
                     </Link>
                   </p>

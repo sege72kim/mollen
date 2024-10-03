@@ -107,7 +107,7 @@ const Catalog_1 = () => {
                 filterStatus={filterStatus}
               />
             )}
-            {pickedCategory === "accsessories" && (
+            {pickedCategory === "acсessories" && (
               <CatalogBlock
                 category="Аксессуары"
                 data={accessories}

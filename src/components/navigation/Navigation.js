@@ -17,7 +17,7 @@ const Navigation = (props) => {
             <div />
           </div>
           <Link className="logo_picture" to="/">
-            <img src="/images/logo1.svg" />
+            <img src={`${process.env.PUBLIC_URL}/images/logo1.svg`} />
           </Link>
           <Link to="/catalog">
             <div className="text_button">каталог</div>

@@ -21,7 +21,7 @@ const Card = ({ props }) => {
       </div>
       <img
         className="card_img"
-        src={`./products/${props.photo}.webp`}
+        src={`/products/${props.photo}.webp`}
         alt="product"
       />
       <h1>{props.name}</h1>

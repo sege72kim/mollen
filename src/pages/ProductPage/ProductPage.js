@@ -1,18 +1,67 @@
-// ProductPage.js
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchDataByID } from "../../redux/productSlice";
+import {
+  fetchDataByID,
+  fetchComplectDataByIDs,
+} from "../../redux/productSlice";
 import "./styles.css";
+import Card from "../../components/card/card";
+import Modal from "../../components/modal/Modal";
+
 const ProductPage = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
   const [pickedAbout, setPickedAbout] = useState("picked1");
+  const [pickedPhoto, setPickedPhoto] = useState("1");
   const { product, productStatus, error } = useSelector((state) => state.data);
+  const { complectItems } = useSelector((state) => state.data);
+  const [modalActive, setModalActive] = useState(false);
+
   useEffect(() => {
-    dispatch(fetchDataByID(id));
+    const fetchProductData = async () => {
+      await dispatch(fetchDataByID(id));
+      const currentProduct = await dispatch(fetchDataByID(id));
+      if (currentProduct.payload && currentProduct.payload.complect) {
+        dispatch(fetchComplectDataByIDs(currentProduct.payload.complect));
+      }
+    };
+
+    fetchProductData();
   }, [dispatch, id]);
 
+  const [availableImages, setAvailableImages] = useState([]);
+
+  useEffect(() => {
+    const checkImages = async () => {
+      if (!product) return;
+      const imagePromises = [];
+      let maxImages = 3;
+      if (
+        product.category === "Наволочка" ||
+        product.category === "Пододеяльник" ||
+        product.category === "Простыня"
+      ) {
+        maxImages = 1;
+      }
+      for (let i = 1; i <= maxImages; i++) {
+        const imageName = `${product.photo}_${i}.webp`;
+        imagePromises.push(
+          fetch(`/products/${imageName}`).then((response) => {
+            if (response.ok) {
+              return imageName;
+            } else return "";
+          })
+        );
+      }
+
+      const results = await Promise.all(imagePromises);
+      setAvailableImages(results);
+    };
+
+    checkImages();
+  }, [product]);
+  console.log(availableImages);
   if (productStatus === "loading") {
     return <p>Loading...</p>;
   }
@@ -20,13 +69,30 @@ const ProductPage = () => {
   if (productStatus === "failed") {
     return <p>Error: {error}</p>;
   }
+
   return (
     <div className="product_page">
       {product && (
         <main>
           <section>
             <div className="product_photo">
-              <img alt="" src={`/products/${product.photo}_1.webp`} />
+              <img
+                alt=""
+                src={`/products/${product.photo}_${pickedPhoto}.webp`}
+                onClick={() => setModalActive(true)}
+              />
+              <div className="pick_photo">
+                {availableImages.map((image, index) => (
+                  <img
+                    key={image}
+                    src={`/products/${image}`}
+                    alt=""
+                    onClick={() => {
+                      setPickedPhoto(index + 1);
+                    }}
+                  />
+                ))}
+              </div>
             </div>
             <div className="product_description">
               <div className="path">
@@ -38,21 +104,23 @@ const ProductPage = () => {
               <h2 className="product_price">{product.price} ₽</h2>
               {product.material !== "none" && (
                 <table className="product_table">
-                  <tr>
-                    <td>Размер</td>
-                    <td>Евро</td>
-                  </tr>
-                  <tr>
-                    <td>Ткань</td>
-                    <td>{product.material}</td>
-                  </tr>
-                  <tr>
-                    <td>Цвет</td>
-                    <td>
-                      {product.color === "special" && "Особый"}
-                      {product.color !== "special" && product.color}
-                    </td>
-                  </tr>
+                  <tbody>
+                    <tr>
+                      <td>Размер</td>
+                      <td>Евро</td>
+                    </tr>
+                    <tr>
+                      <td>Ткань</td>
+                      <td>{product.material}</td>
+                    </tr>
+                    <tr>
+                      <td>Цвет</td>
+                      <td>
+                        {product.color === "special" && "Особый"}
+                        {product.color !== "special" && product.color}
+                      </td>
+                    </tr>
+                  </tbody>
                 </table>
               )}
 
@@ -114,7 +182,7 @@ const ProductPage = () => {
                     «bespoke» для ценителей высокого качества и индивидуального
                     подхода. Продукция компании Mollen гармонично сочетает
                     изысканность, современный подход, уважение к традициям,
-                    эксклюзивный дизайн и высокое качество."
+                    эксклюзивный дизайн и высокое качество.
                   </p>
                 </div>
               )}
@@ -137,6 +205,27 @@ const ProductPage = () => {
               )}
             </div>
           </section>
+          {complectItems && complectItems.length > 0 && (
+            <section className="complect_container">
+              <h1>В Комплект входят</h1>
+              <div className="complect_cards">
+                {complectItems.map((item) => (
+                  <Link key={item.id} to={`/product/${item.id}`}>
+                    <Card props={item} />
+                  </Link>
+                ))}
+              </div>
+            </section>
+          )}
+          <Modal active={modalActive} setActive={setModalActive}>
+            <div className="modal_picture">
+              <img
+                alt=""
+                src={`/products/${product.photo}_${pickedPhoto}.webp`}
+                onClick={() => setModalActive(true)}
+              />
+            </div>
+          </Modal>
         </main>
       )}
     </div>

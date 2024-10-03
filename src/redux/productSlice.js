@@ -13,12 +13,23 @@ export const fetchDataByID = createAsyncThunk(
     return data;
   }
 );
+export const fetchComplectDataByIDs = createAsyncThunk(
+  "data/fetchComplectDataByIDs",
+  async (ids) => {
+    const requests = ids.map((id) =>
+      fetch(`/api/products/${id}`).then((res) => res.json())
+    );
+    const data = await Promise.all(requests);
+    return data;
+  }
+);
 
 const productSlice = createSlice({
   name: "products",
   initialState: {
     data: [],
     product: null,
+    complectItems: [],
     status: "idle",
     productStatus: "idle",
     error: null,
@@ -48,6 +59,18 @@ const productSlice = createSlice({
       })
       .addCase(fetchDataByID.rejected, (state, action) => {
         state.productStatus = "failed";
+        state.error = action.error.message;
+      })
+      // Обработка запроса данных по Комплекту
+      .addCase(fetchComplectDataByIDs.pending, (state) => {
+        state.complectStatus = "loading";
+      })
+      .addCase(fetchComplectDataByIDs.fulfilled, (state, action) => {
+        state.complectStatus = "succeeded";
+        state.complectItems = action.payload; // Add this line
+      })
+      .addCase(fetchComplectDataByIDs.rejected, (state, action) => {
+        state.complectStatus = "failed";
         state.error = action.error.message;
       });
   },

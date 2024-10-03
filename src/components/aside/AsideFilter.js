@@ -35,9 +35,9 @@ const AsideFilter = ({
         />
         <Checkbox
           label="Аксессуары"
-          onChange={() => changePickedCategory("accsessories")}
+          onChange={() => changePickedCategory("acсessories")}
           state={pickedCategory}
-          category="accsessories"
+          category="acсessories"
         />
         <Checkbox
           label="Ароматы для дома"

@@ -14,9 +14,11 @@
   aspect-ratio: 3/2;
   object-fit: cover;
   object-position: center;
+  cursor: pointer;
 }
 .product_photo {
   width: 60%;
+  position: relative;
 }
 .product_description {
   margin-left: 50px;
@@ -106,4 +108,41 @@
 }
 .pick_about_active {
   color: #4e76c6;
+}
+.complect_container > h1 {
+  font-size: 40px;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-bottom: 30px;
+  margin-top: 60px;
+}
+.complect_cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin-bottom: 60px;
+}
+.pick_photo {
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  row-gap: 6px;
+  bottom: 30px;
+  left: 20px;
+}
+.pick_photo img {
+  border: 2px solid #eceae7;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.pick_photo img:hover {
+  transform: scale(0.95);
+  filter: brightness(70%);
+}
+.modal_picture {
+  height: 100%;
+}
+.modal_picture img {
+  height: 100%;
 }
