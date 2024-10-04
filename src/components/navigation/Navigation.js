@@ -1,7 +1,7 @@
 import React from "react";
 import "./styles.css";
 import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { toggleCart } from "../../redux/cartSlice";
 
 const Navigation = (props) => {
@@ -12,6 +12,7 @@ const Navigation = (props) => {
   const handleOpenCart = () => {
     dispatch(toggleCart());
   };
+  const cartItems = useSelector((state) => state.cart.items);
   return (
     <nav>
       <div className={colorClass}>
@@ -38,7 +39,8 @@ const Navigation = (props) => {
             <div>конструктор</div>
           </li>
           <li className="buy_storage" onClick={handleOpenCart}>
-            <img src="/icons/purchase.svg" />
+            <img src="/icons/purchase.svg" alt="" />
+            <div>{cartItems.length}</div>
           </li>
         </ul>
       </div>

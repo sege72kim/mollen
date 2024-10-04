@@ -8,7 +8,7 @@ import {
 import "./styles.css";
 import Card from "../../components/card/card";
 import Modal from "../../components/modal/Modal";
-import { addToCart } from "../../redux/cartSlice";
+import { addToCart, toggleCart } from "../../redux/cartSlice";
 
 const ProductPage = () => {
   const { id } = useParams();
@@ -21,6 +21,7 @@ const ProductPage = () => {
 
   const handleAddToCart = () => {
     dispatch(addToCart(product));
+    dispatch(toggleCart());
   };
   useEffect(() => {
     const fetchProductData = async () => {
@@ -65,7 +66,6 @@ const ProductPage = () => {
 
     checkImages();
   }, [product]);
-  console.log(availableImages);
   if (productStatus === "loading") {
     return <p>Loading...</p>;
   }

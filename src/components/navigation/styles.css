@@ -108,6 +108,19 @@ nav li:hover {
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
+.buy_storage div {
+  position: absolute;
+  background-color: #72716e;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  top: 15px;
+  right: 33px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .buy_storage:hover {
   transform: scale(1.1);
 }
