@@ -126,7 +126,6 @@
   text-transform: uppercase;
   font-weight: 500;
   margin-bottom: 30px;
-  margin-top: 60px;
 }
 .complect_cards {
   display: grid;
@@ -157,6 +156,9 @@
 }
 .modal_picture img {
   height: 100%;
+}
+.section_product_about {
+  margin-bottom: 60px;
 }
 @media (max-width: 1200px) {
   .product_page main section:nth-child(1) {

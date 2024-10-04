@@ -67,7 +67,7 @@ const productSlice = createSlice({
       })
       .addCase(fetchComplectDataByIDs.fulfilled, (state, action) => {
         state.complectStatus = "succeeded";
-        state.complectItems = action.payload; // Add this line
+        state.complectItems = action.payload;
       })
       .addCase(fetchComplectDataByIDs.rejected, (state, action) => {
         state.complectStatus = "failed";

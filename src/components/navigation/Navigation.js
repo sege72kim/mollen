@@ -1,12 +1,17 @@
 import React from "react";
 import "./styles.css";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { toggleCart } from "../../redux/cartSlice";
 
 const Navigation = (props) => {
   const colorClass =
     props.color === "black" ? "navigation-black" : "navigation-white";
   const colorButton = props.color === "black" ? "" : "1";
-
+  const dispatch = useDispatch();
+  const handleOpenCart = () => {
+    dispatch(toggleCart());
+  };
   return (
     <nav>
       <div className={colorClass}>
@@ -32,7 +37,7 @@ const Navigation = (props) => {
             <img src={`/icons/bed${colorButton}.svg`} />
             <div>конструктор</div>
           </li>
-          <li className="buy_storage">
+          <li className="buy_storage" onClick={handleOpenCart}>
             <img src="/icons/purchase.svg" />
           </li>
         </ul>

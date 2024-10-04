@@ -18,10 +18,9 @@ const ProductPage = () => {
   const { product, productStatus, error } = useSelector((state) => state.data);
   const { complectItems } = useSelector((state) => state.data);
   const [modalActive, setModalActive] = useState(false);
-  const cartItems = useSelector((state) => state.cart);
+
   const handleAddToCart = () => {
     dispatch(addToCart(product));
-    console.log(cartItems);
   };
   useEffect(() => {
     const fetchProductData = async () => {
@@ -143,7 +142,7 @@ const ProductPage = () => {
               </button>
             </div>
           </section>
-          <section>
+          <section className="section_product_about">
             <div className="pick_about">
               <button
                 onClick={() => {

@@ -90,7 +90,6 @@
     font-size: 25px;
     border-radius: 50%;
     background-color: #f5f3f0;
-    transform: rotate(45deg);
   }
 }
 @media (max-width: 600px) {

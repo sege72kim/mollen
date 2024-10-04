@@ -16,7 +16,9 @@ const AsideFilter = ({
     <aside className={`filter${filterStatus}`}>
       <div className="mobile_filter_header">
         <h1>Фильтры</h1>
-        <button onClick={openFilter}>+</button>
+        <button onClick={openFilter}>
+          <img src="/icons/cross.svg" alt="" />
+        </button>
       </div>
       <div className="aside_filter">
         <h1>Категории</h1>
