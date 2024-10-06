@@ -8,7 +8,7 @@ import {
 import "./styles.css";
 import Card from "../../components/card/card";
 import Modal from "../../components/modal/Modal";
-import { addToCart } from "../../redux/cartSlice";
+import { addToCart, toggleCart } from "../../redux/cartSlice";
 
 const ProductPage = () => {
   const { id } = useParams();
@@ -21,6 +21,7 @@ const ProductPage = () => {
 
   const handleAddToCart = () => {
     dispatch(addToCart(product));
+    dispatch(toggleCart());
   };
   useEffect(() => {
     const fetchProductData = async () => {
@@ -74,14 +75,86 @@ const ProductPage = () => {
     return <p>Error: {error}</p>;
   }
 
+  let prodcategory = "";
+  if (product.special === "none") {
+    switch (product.category) {
+      case "Белье": {
+        prodcategory = "bedding";
+        break;
+      }
+      case "Наволочка": {
+        prodcategory = "beddin1";
+        break;
+      }
+      case "Пододеяльник": {
+        prodcategory = "bedding2";
+        break;
+      }
+      case "Простыня": {
+        prodcategory = "bedding3";
+        break;
+      }
+      case "Одежда": {
+        prodcategory = "clothes";
+        break;
+      }
+      case "Ароматы": {
+        prodcategory = "aroma";
+        break;
+      }
+      case "Аксессуары": {
+        prodcategory = "accessories";
+        break;
+      }
+    }
+  } else {
+    switch (product.special) {
+      case "Сказки": {
+        prodcategory = "special1";
+        break;
+      }
+      case "Агиттекстиль": {
+        prodcategory = "special2";
+        break;
+      }
+      case "Узоры": {
+        prodcategory = "special3";
+        break;
+      }
+      case "Композиторы": {
+        prodcategory = "special4";
+        break;
+      }
+      case "Санкт Петербург": {
+        prodcategory = "special5";
+        break;
+      }
+      case "Степи": {
+        prodcategory = "special6";
+        break;
+      }
+    }
+  }
   return (
     <div className="product_page">
       {product && (
         <main>
           <section>
             <div className="path_mobile">
-              <span>Главная</span> / <span>Каталог</span> /{" "}
-              <span>{product.category}</span> / <span>{product.name}</span>
+              <span>
+                <Link to="/">Главная</Link>
+              </span>{" "}
+              /{" "}
+              <span>
+                <Link to="/catalog">Каталог</Link>
+              </span>{" "}
+              /{" "}
+              <span>
+                <Link to="/catalog" state={{ category: prodcategory }}>
+                  {product.category}
+                </Link>
+              </span>{" "}
+              / <span>{product.name}</span>
             </div>
             <div className="product_photo">
               <img
@@ -104,8 +177,20 @@ const ProductPage = () => {
             </div>
             <div className="product_description">
               <div className="path">
-                <span>Главная</span> / <span>Каталог</span> /{" "}
-                <span>{product.category}</span> / <span>{product.name}</span>
+                <span>
+                  <Link to="/">Главная</Link>
+                </span>{" "}
+                /{" "}
+                <span>
+                  <Link to="/catalog">Каталог</Link>
+                </span>{" "}
+                /{" "}
+                <span>
+                  <Link to="/catalog" state={{ category: prodcategory }}>
+                    {product.category}
+                  </Link>
+                </span>{" "}
+                / <span>{product.name}</span>
               </div>
               <h1 className="product_name">{product.name}</h1>
               <p className="product_id">id: {product.id}</p>

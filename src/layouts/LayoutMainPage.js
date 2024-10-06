@@ -3,6 +3,7 @@ import "./styles.css";
 import Preloader from "../components/preloader/Preloader";
 import Footer from "../components/footer/Footer";
 import Navigation from "../components/navigation/Navigation";
+import SideCart from "../components/sideCart/sideCart";
 const LayoutMainPage = () => {
   return (
     <>
@@ -70,6 +71,7 @@ const LayoutMainPage = () => {
           <img className="main_header_logo" src="/icons/logo.svg" />
         </div>
       </header>
+      <SideCart />
       <Outlet />
       <Footer />
     </>
