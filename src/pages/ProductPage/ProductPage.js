@@ -76,62 +76,66 @@ const ProductPage = () => {
   }
 
   let prodcategory = "";
-  if (product.special === "none") {
-    switch (product.category) {
-      case "Белье": {
-        prodcategory = "bedding";
-        break;
-      }
-      case "Наволочка": {
-        prodcategory = "beddin1";
-        break;
-      }
-      case "Пододеяльник": {
-        prodcategory = "bedding2";
-        break;
-      }
-      case "Простыня": {
-        prodcategory = "bedding3";
-        break;
-      }
-      case "Одежда": {
-        prodcategory = "clothes";
-        break;
-      }
-      case "Ароматы": {
-        prodcategory = "aroma";
-        break;
-      }
-      case "Аксессуары": {
-        prodcategory = "accessories";
-        break;
-      }
-    }
+  if (!product) {
+    return;
   } else {
-    switch (product.special) {
-      case "Сказки": {
-        prodcategory = "special1";
-        break;
+    if (product.special === "none") {
+      switch (product.category) {
+        case "Белье": {
+          prodcategory = "bedding";
+          break;
+        }
+        case "Наволочка": {
+          prodcategory = "beddin1";
+          break;
+        }
+        case "Пододеяльник": {
+          prodcategory = "bedding2";
+          break;
+        }
+        case "Простыня": {
+          prodcategory = "bedding3";
+          break;
+        }
+        case "Одежда": {
+          prodcategory = "clothes";
+          break;
+        }
+        case "Ароматы": {
+          prodcategory = "aroma";
+          break;
+        }
+        case "Аксессуары": {
+          prodcategory = "accessories";
+          break;
+        }
       }
-      case "Агиттекстиль": {
-        prodcategory = "special2";
-        break;
-      }
-      case "Узоры": {
-        prodcategory = "special3";
-        break;
-      }
-      case "Композиторы": {
-        prodcategory = "special4";
-        break;
-      }
-      case "Санкт Петербург": {
-        prodcategory = "special5";
-        break;
-      }
-      case "Степи": {
-        prodcategory = "special6";
-        break;
+    } else {
+      switch (product.special) {
+        case "Сказки": {
+          prodcategory = "special1";
+          break;
+        }
+        case "Агиттекстиль": {
+          prodcategory = "special2";
+          break;
+        }
+        case "Узоры": {
+          prodcategory = "special3";
+          break;
+        }
+        case "Композиторы": {
+          prodcategory = "special4";
+          break;
+        }
+        case "Санкт Петербург": {
+          prodcategory = "special5";
+          break;
+        }
+        case "Степи": {
+          prodcategory = "special6";
+          break;
+        }
       }
     }
   }
