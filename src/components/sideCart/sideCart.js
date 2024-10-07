@@ -2,7 +2,12 @@ import React, { useState } from "react";
 import "./styles.css";
 import { useDispatch, useSelector } from "react-redux";
 import Card from "../card/card";
-import { toggleCart } from "../../redux/cartSlice";
+import {
+  decreaseQuantity,
+  increaseQuantity,
+  removeFromCart,
+  toggleCart,
+} from "../../redux/cartSlice";
 
 const SideCart = () => {
   const dispatch = useDispatch();
@@ -40,8 +45,27 @@ const SideCart = () => {
                     <div>
                       <p className="side_cart_name">{item.name}</p>
                       <p className="side_cart_color"> Цвет: {item.color}</p>
-                      <div>
-                        <p className="side_cart_price">{item.price} ₽</p>
+                      <div className="side_cart_bottom">
+                        <p className="side_cart_price">
+                          {item.price * item.quantity} ₽
+                        </p>
+                        <div className="quantity_control">
+                          <button
+                            onClick={() =>
+                              item.quantity > 1
+                                ? dispatch(decreaseQuantity(item.id))
+                                : dispatch(removeFromCart(item.id))
+                            }
+                          >
+                            -
+                          </button>
+                          <span>{item.quantity}</span>
+                          <button
+                            onClick={() => dispatch(increaseQuantity(item.id))}
+                          >
+                            +
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -50,6 +74,7 @@ const SideCart = () => {
               <div className="side_cart_total">
                 <p>Сумма</p> <h2>{total} ₽</h2>
               </div>
+              <button className="side_cart_button">Перейти в корзину</button>
             </>
           ) : (
             <p>Корзина пуста</p>

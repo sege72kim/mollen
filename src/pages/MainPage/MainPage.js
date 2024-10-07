@@ -8,30 +8,24 @@ const MainPage = () => {
         <section className="main_section_1">
           <h1>Навигатор по коллекции</h1>
           <div>
-            <div className="main_section_1_block">
-              <img alt="" src="/images/special_1.webp" />
-              <p>Принты</p>
-            </div>
-            <div className="main_section_1_block">
-              <img alt="" src="/images/special_2.webp" />
-              <p>Готовые решения</p>
-            </div>
-            <div className="main_section_1_block">
-              <img alt="" src="/images/special_3.webp" />
-              <p>Однотонные комплекты</p>
-            </div>
-            <div className="main_section_1_block">
-              <img alt="" src="/images/special_4.webp" />
-              <p>Одежда</p>
-            </div>
-            <div className="main_section_1_block">
-              <img alt="" src="/images/special_5.webp" />
-              <p>Акссесуары</p>
-            </div>
-            <div className="main_section_1_block">
-              <img alt="" src="/images/special_6.webp" />
-              <p>Ароматы</p>
-            </div>
+            <MainSubBlock name="special" numb="1">
+              Принты
+            </MainSubBlock>
+            <MainSubBlock name="special" numb="2">
+              Готовые решения
+            </MainSubBlock>
+            <MainSubBlock name="special" numb="3">
+              Комплекты
+            </MainSubBlock>
+            <MainSubBlock name="special" numb="4">
+              Одежда
+            </MainSubBlock>
+            <MainSubBlock name="special" numb="5">
+              Акссесуары
+            </MainSubBlock>
+            <MainSubBlock name="special" numb="6">
+              Ароматы
+            </MainSubBlock>
           </div>
         </section>
         <section className="main_section_2">
@@ -204,29 +198,32 @@ const MainPage = () => {
         <section className="main_section_1">
           <h1>Мы в соцсетях</h1>
           <div>
-            <div className="main_section_1_block">
-              <img alt="" src="/images/social_1.webp" />
-              <p>VK</p>
-            </div>
-            <div className="main_section_1_block">
-              <img alt="" src="/images/social_2.webp" />
-              <p>Pinterest</p>
-            </div>
-            <div className="main_section_1_block">
-              <img alt="" src="/images/social_3.webp" />
-              <p>Telegram</p>
-            </div>
-            <div className="main_section_1_block">
-              <img alt="" src="/images/social_4.webp" />
-              <p>Facebook</p>
-            </div>
-            <div className="main_section_1_block">
-              <img alt="" src="/images/social_5.webp" />
-              <p>instagram</p>
-            </div>
+            <MainSubBlock name="social" numb="1">
+              VK
+            </MainSubBlock>
+            <MainSubBlock name="social" numb="2">
+              Pinterest
+            </MainSubBlock>
+            <MainSubBlock name="social" numb="3">
+              Telegram
+            </MainSubBlock>
+            <MainSubBlock name="social" numb="4">
+              Facebook
+            </MainSubBlock>
+            <MainSubBlock name="social" numb="5">
+              Instagram
+            </MainSubBlock>
           </div>
         </section>
       </main>
+    </div>
+  );
+};
+const MainSubBlock = ({ numb, children, name }) => {
+  return (
+    <div className="main_section_1_block">
+      <img alt="" src={`/images/${name}_${numb}.webp`} />
+      <p>{children}</p>
     </div>
   );
 };
