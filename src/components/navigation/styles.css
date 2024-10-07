@@ -30,6 +30,8 @@ nav > div {
   flex-direction: row;
   column-gap: 7px;
   cursor: pointer;
+  height: 30px;
+  align-items: center;
 }
 .menu_button:hover div {
   transform: scale(1.5);
@@ -135,6 +137,7 @@ nav li:hover {
   .menu_button {
     flex-direction: column;
     row-gap: 4px;
+    width: 30px;
   }
   .text_button {
     display: none;
@@ -143,7 +146,7 @@ nav li:hover {
     margin-right: 20px;
   }
   .logo {
-    column-gap: 30px;
+    column-gap: 15px;
     margin-left: 30px;
   }
 }

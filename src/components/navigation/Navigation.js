@@ -1,8 +1,9 @@
 import React from "react";
 import "./styles.css";
 import { Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { toggleCart } from "../../redux/cartSlice";
+import { toggleMenu } from "../../redux/statesSlice";
 
 const Navigation = (props) => {
   const colorClass =
@@ -12,12 +13,14 @@ const Navigation = (props) => {
   const handleOpenCart = () => {
     dispatch(toggleCart());
   };
-  const cartItems = useSelector((state) => state.cart.items);
+  const handleOpenMenu = () => {
+    dispatch(toggleMenu());
+  };
   return (
     <nav>
       <div className={colorClass}>
         <div className="logo">
-          <div className="menu_button">
+          <div className="menu_button" onClick={handleOpenMenu}>
             <div />
             <div />
             <div />
