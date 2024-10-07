@@ -4,10 +4,12 @@ import Preloader from "../components/preloader/Preloader";
 import Footer from "../components/footer/Footer";
 import Navigation from "../components/navigation/Navigation";
 import SideCart from "../components/sideCart/sideCart";
+import Menu from "../components/menu/Menu";
 const LayoutMainPage = () => {
   return (
     <>
       <Preloader />
+      <Menu />
       <header className="main_header">
         <div className="main_header_back" />
         <Navigation color="white" />
@@ -71,6 +73,7 @@ const LayoutMainPage = () => {
           <img className="main_header_logo" src="/icons/logo.svg" />
         </div>
       </header>
+
       <SideCart />
       <Outlet />
       <Footer />
