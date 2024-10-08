@@ -1,7 +1,7 @@
 import React from "react";
 import "./styles.css";
 import { Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { toggleCart } from "../../redux/cartSlice";
 import { toggleMenu } from "../../redux/statesSlice";
 
@@ -43,7 +43,6 @@ const Navigation = (props) => {
           </li>
           <li className="buy_storage" onClick={handleOpenCart}>
             <img src="/icons/purchase.svg" alt="" />
-            <div>{cartItems.length}</div>
           </li>
         </ul>
       </div>

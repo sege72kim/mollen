@@ -1,0 +1,18 @@
+.order_page {
+  display: flex;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+.order_page main {
+  width: 100%;
+  max-width: 1080px;
+}
+.order_page aside {
+  width: 360px;
+  border-left: 1px solid rgb(236, 234, 231);
+}
+.order_section_name {
+  width: 25%;
+  border-right: 1px solid rgb(236, 234, 231);
+  border-bottom: 1px solid rgb(236, 234, 231);
+}

@@ -8,6 +8,7 @@ import {
   removeFromCart,
   toggleCart,
 } from "../../redux/cartSlice";
+import { Link } from "react-router-dom";
 
 const SideCart = () => {
   const dispatch = useDispatch();
@@ -74,7 +75,9 @@ const SideCart = () => {
               <div className="side_cart_total">
                 <p>Сумма</p> <h2>{total} ₽</h2>
               </div>
-              <button className="side_cart_button">Перейти в корзину</button>
+              <Link to="order">
+                <button className="side_cart_button">Оформить заказ</button>
+              </Link>
             </>
           ) : (
             <p>Корзина пуста</p>

@@ -6,6 +6,7 @@ import LayoutDefault from "../layouts/LayoutDefault";
 import Catalog_1 from "../pages/Catalog_1level/Catalog_1";
 import ProductPage from "../pages/ProductPage/ProductPage";
 import ScrollToTop from "../utils/scrollToTop";
+import OrderPage from "../pages/OrderPage/OrderPage";
 
 const AppRoutes = () => {
   return (
@@ -18,6 +19,7 @@ const AppRoutes = () => {
         <Route path="/" element={<LayoutDefault />}>
           <Route path="catalog" element={<Catalog_1 />} />
           <Route path="product/:id" element={<ProductPage />} />
+          <Route path="order" element={<OrderPage />} />
         </Route>
       </Routes>
     </>
